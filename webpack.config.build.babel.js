@@ -24,8 +24,8 @@ webpackConfig.mode = 'production'
 
 const webpackProdOutput = {
   publicPath: PUBLIC_PATH,
-  filename: `${config.get('assetPath')}/[name]-[hash].js`,
-  chunkFilename: `${config.get('assetPath')}/[id].[hash].js`,
+  filename: `${config.get('assetPath')}/[name].js`,
+  chunkFilename: `${config.get('assetPath')}/[id].js`,
 };
 
 const html = config.get('html');
@@ -159,8 +159,8 @@ webpackConfig.plugins.push(
   new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
-    filename: `${config.get('assetPath')}/[name]-[hash].css`,
-    chunkFilename: `${config.get('assetPath')}/[id]-[hash].css`,
+    filename: `${config.get('assetPath')}/[name].css`,
+    chunkFilename: `${config.get('assetPath')}/[id].css`,
   })
 );
 
