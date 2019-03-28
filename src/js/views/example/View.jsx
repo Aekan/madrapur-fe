@@ -49,7 +49,7 @@ class ExampleView extends Component {
   render() {
     return (
       <Fragment>
-        <LazyExample {...this.props} />
+        <div>hi</div>
         <ErrorBoundary>
           <ExampleWithError {...this.props} />
         </ErrorBoundary>
