@@ -1,3 +1,6 @@
+/* eslint-disable react/no-multi-comp */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable no-unused-vars */
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -16,6 +19,19 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   ...exampleActions,
+}
+
+class HeaderBlock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { header: '' };
+  }
+
+  render() {
+    return (
+      <div>1</div>
+    )
+  }
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
