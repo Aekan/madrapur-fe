@@ -1,9 +1,9 @@
 {
   "env": "default",
-  "host": "0.0.0.0",
+  "host": "localhost",
   "port": "8080",
   "publicPath": "/",
-  "assetPath": "assets",
+  "assetPath": "./assets/c91ba70f",
   "jsSourcePath": "src/js",
   "optimization": {
     "analyzeMode": false,
@@ -17,7 +17,7 @@
   },
   "html": [
     {
-			"name": "homepage",
+      "name": "homepage",
       "title": "Everything is Awesome",
       "template": "_default.html",
       "filename": "index.html"
