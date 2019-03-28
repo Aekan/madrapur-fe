@@ -6,13 +6,17 @@
   font-size: 16px;
   margin-left: 60px;
   margin-right: 60px;
+}
 
-  .content {
+.article-container {
+  display: flex;
+  flex-direction: column;
+}
 
-  }
+.article-container .aside {
+  flex: 4;
+}
 
-  h1, h2 {
-    /* This is how you use custom fonts */
-    font-family: YourFavoriteFont;
-  }
+.article-container .product {
+  flex: 8;
 }

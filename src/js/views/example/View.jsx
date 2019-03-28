@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
@@ -49,10 +50,7 @@ class ExampleView extends Component {
   render() {
     return (
       <Fragment>
-        <div>hi</div>
-        <ErrorBoundary>
-          <ExampleWithError {...this.props} />
-        </ErrorBoundary>
+        a
       </Fragment>
     )
   }
