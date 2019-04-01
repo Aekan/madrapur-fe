@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/no-unused-state */
@@ -11,6 +12,7 @@ import { actions as exampleActions } from '../../redux/modules/example'
 import { exampleSelector } from '../../redux/selectors/exampleSelector'
 import { ExampleWithError } from '../../common/components/Example'
 import { ErrorBoundary } from '../../common/components/Utilities'
+import styles from './MainPage.css';
 
 const LazyExample = LazyLoading(() => import('../../common/components/Example/Example'))
 
@@ -22,18 +24,6 @@ const mapDispatchToProps = {
   ...exampleActions,
 }
 
-class HeaderBlock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { header: '' };
-  }
-
-  render() {
-    return (
-      <div>1</div>
-    )
-  }
-}
 
 @connect(mapStateToProps, mapDispatchToProps)
 class ExampleView extends Component {
@@ -49,9 +39,18 @@ class ExampleView extends Component {
 
   render() {
     return (
-      <Fragment>
-        a
-      </Fragment>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <h1>Budapest River Cruise</h1>
+          </div>
+          <div className="col-lg-12">
+          Welcome to Budapest, in the heart of Europe, in the middle of a fairy tale! Budapest is one of the most mystic, enchanted and romantic cities along the Danube river.
+          As the capital of Hungary, this is a centre of everything you want to find in this welcoming country. At the same time, like the heart of Europe, you will find Budapest in a lovely, caothic way as in the East, a little precise, like on the West, as modern as the North with a little touch of the Souths.
+          Join as and we will show you this fabolous side of the capital, while floating on the Danube river, underneath the Bridges, and you will be able to admire the panoramic view and the most famous places of Budapest.
+          </div>
+        </div>
+      </div>
     )
   }
 }

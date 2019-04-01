@@ -7,29 +7,87 @@ import {
 } from 'react-router-dom'
 
 import LazyLoading from 'common/components/LazyLoading'
-
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 import styles from '../style/index.css'
 
 // This is show case how you can lazy loading component
 const ExampleRouteHandler = LazyLoading(() => import('views/example'))
 const Header = LazyLoading(() => import('common/components/Header/Header'))
+const Footer = LazyLoading(() => import('common/components/Footer/Footer'))
 
 // Please remove that, it is an example
-const JustAnotherPage = () => (
-  <div>
-    <h2>This is Just Another Page</h2>
-    <p>Please remove this from your route, it is just to show case basic setup for router.</p>
+const BudapestCruises = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+        <h2>This is Just Another Page</h2>
+        <p>Please remove this from your route, it is just to show case basic setup for router.</p>
+      </div>
+    </div>
   </div>
 )
 
-const BudapestWineTasting = () => (
-  <div className="article-container" style={{width: '100%'}}>
-    <div className="row">
-      <div className="col-lg-4 aside" style={{width: '20%', float: 'left'}}>
-        ASIDE
+export default class BasicConcepts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDayClick = this.handleDayClick.bind(this);
+    this.state = {
+      selectedDay: undefined,
+    };
+  }
+
+  handleDayClick(day, { selected, disabled }) {
+    if (disabled) {
+      // Day is disabled, do nothing
+      return;
+    }
+    if (selected) {
+      // Unselect the day if already selected
+      this.setState({ selectedDay: undefined });
+      // beallitja a state erteket a pickelt napra
+      return;
+    }
+    this.setState({ selectedDay: day });
+  }
+
+  render() {
+    return (
+      <div>
+        <DayPicker
+          onDayClick={this.handleDayClick}
+          selectedDays={this.state.selectedDay}
+          disabledDays={{ daysOfWeek: [0] }}
+        />
+        {this.state.selectedDay ? (
+          <p>
+You clicked
+            {' '}
+            {this.state.selectedDay.toLocaleDateString()}
+          </p>
+        ) : (
+          <p>Please select a day.</p>
+        )}
       </div>
-      <div className="col-lg-8 product" style={{width: '80%', float: 'left'}}>
-        <h1 className="title" style={{color: '#535353', 'font-family': 'Palatino', 'font-size': '25px', 'font-weight': '600'}}>BUDAPEST WINE TASTING & PLAY</h1>
+    );
+  }
+}
+
+const BudapestWineTasting = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+        <h1
+          className="title"
+          style={{
+color: '#535353', 'font-family': 'Palatino', 'font-size': '25px', 'font-weight': '600'
+          }}
+        >
+BUDAPEST WINE TASTING & PLAY
+        </h1>
         <h2 className="subtitle" style={{'font-size': '19px !important', 'font-family': 'Helvetica !important'}}>Taste & Play on our Budapest River Cruise</h2>
         <div className="content" style={{'font-family': 'Helvetica !important', 'font-size': '16px !important', margin: '0 0 20px'}}>Have you ever been to Hungary while having international casino based party games where you can learn the tricks of wine tasting while floating on the Danube River and enjoying live music, have you? We highly doubt it, since our matchless Taste and Play program has just been launched and now is ready for adventurous pioneers to take a chance on the good luck and the sensitive sensory organs. It is recommended not just for professional wine tasters, but for beginners too. So if you are interested in quality wines but you have gained a little experience, the time has arrived to boost your knowledge.</div>
         <img className="image" style={{height: 'auto', 'max-width': '100%', margin: '0 0 20px'}} src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-budapest.jpg" alt="wine tasting cruise budapest" width="1920" height="491" />
@@ -57,14 +115,14 @@ const HeaderWithRouter = withRouter((props) => <Header {...props} />)
 module.exports = (
   <div className={styles.container}>
     <HeaderWithRouter />
-    <hr />
-    <div className={styles.content}>
+    <div id="index" className={styles.content}>
       <Switch>
         <Route exact path="/" component={ExampleRouteHandler} />
-        <Route path="/page" component={JustAnotherPage} />
+        <Route path="/budapest-cruises" component={BudapestCruises} />
         <Route path="/product/budapest-wine-tasting" component={BudapestWineTasting} />
         <Route path="*" component={ExampleRouteHandler} />
       </Switch>
     </div>
+    <Footer />
   </div>
 )
