@@ -83,7 +83,7 @@ const BudapestWineTasting = () => (
         <h1
           className="title"
           style={{
-color: '#535353', 'font-family': 'Palatino', 'font-size': '25px', 'font-weight': '600'
+            color: '#535353', 'font-family': 'Palatino', 'font-size': '25px', 'font-weight': '600',
           }}
         >
 BUDAPEST WINE TASTING & PLAY
@@ -109,6 +109,169 @@ BUDAPEST WINE TASTING & PLAY
   </div>
 )
 
+const BudapestPianoShow = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+        <h1
+          className="title"
+          style={{
+            color: '#535353', 'font-family': 'Palatino', 'font-size': '25px', 'font-weight': '600',
+          }}
+        >
+  Budapest River Cruise on the Danube
+        </h1>
+        <h2 className="subtitle" style={{'font-size': '19px !important', 'font-family': 'Helvetica !important'}}>What would like to do during your Budapest Holiday?</h2>
+        <div className="content" style={{'font-family': 'Helvetica !important', 'font-size': '16px !important', margin: '0 0 20px'}}>
+        Have you already heard a lot about Budapest but you have never been here before? Do not you have any idea which Budapest destinations and programmes you must see?
+        So we will help you with a small guide.
+        Why could we offer our Budapest dinner cruises for tourists visiting Budapest?
+        Buda Castle, the Parliament Building, Chain Bridge or the Hungarian National Theatre are all visible from our Budapest River Cruise during you are having pleasure in pianists’ playing and our hostess’ live singing.
+        The Live Piano Entertainment is the most wanted Budapest River Cruise, giving an opportunity to share your table with your family or friends.
+        </div>
+        <div className="content" style={{'font-family': 'Helvetica !important', 'font-size': '16px !important', margin: '0 0 20px'}}>
+        To whom can we offer our Budapest River Cruise?
+        Visitors who would like to drink a glass of wine and wish for nice speech with their lovers while they listening nice music behind.
+        
+        The musicians and singers will take care of great ambience while you can watch the whole city around you.
+        
+        Our Boat has two levels; one of them provides a Hungarian Folklore and Operetta Show, which is also very popular.
+        
+        During the cruising in Budapest, you can taste typical Hungarian dishes served as a 4-course menu, including appetizers in pastry basket with four different stuffing. When you start your dinner and cruise, you will can clink with a glass of welcome drink, which is optional from soft drinks or champagne.
+        
+        Finishing with the tasty appetizers prepared by a chef who gained Michelin Star, choose from two different kinds of soups, such as Vegetarian Goulash, containing the best qualified Hungarian vegetables, such as carrot or potato, yellow onion, garlic or apiaceous. The other special soup might be optionally chosen as the well-known pumpkin cream soup with roasted pumpkin seeds.
+        
+        After you finished with the first two meals, you can take around on the boat; desire the beautiful views and sights of Budapest, taking wonderful selfies with the Paris of East behind you.
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestFolkloreShow = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestValentinesDay = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestChristmasCruise = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestNewYearsCruise = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestSightseeingCruise = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestBoozeCruise = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        {<BasicConcepts />}
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
+const Shop = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+       a
+      </div>
+    </div>
+  </div>
+)
+
+const EventBudapest = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+       a
+      </div>
+    </div>
+  </div>
+)
+
+const PrivacyPolicy = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+        Policy cucc
+      </div>
+    </div>
+  </div>
+)
+
+const BudapestHistorical = () => (
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-4 aside" style={{float: 'left'}}>
+        contact form
+      </div>
+      <div className="col-lg-8 product" style={{float: 'left'}}>
+    a
+      </div>
+    </div>
+  </div>
+)
+
 // This show case how you can access routing info in your component
 const HeaderWithRouter = withRouter((props) => <Header {...props} />)
 
@@ -119,7 +282,18 @@ module.exports = (
       <Switch>
         <Route exact path="/" component={ExampleRouteHandler} />
         <Route path="/budapest-cruises" component={BudapestCruises} />
+        <Route path="/product/budapest-river-cruise-piano-battle-show" component={BudapestPianoShow} />
+        <Route path="/product/hungarian-folklore-and-dinner-cruise" component={BudapestFolkloreShow} />
         <Route path="/product/budapest-wine-tasting" component={BudapestWineTasting} />
+        <Route path="/product/budapest-valentines-day-dinner-with-cruise" component={BudapestValentinesDay} />
+        <Route path="/product/budapest-christmas-eve-cruise-dinner" component={BudapestChristmasCruise} />
+        <Route path="/product/newyearsevebudapest-dinner-cruise" component={BudapestNewYearsCruise} />
+        <Route path="/budapest-sightseeing-river-cruise" component={BudapestSightseeingCruise} />
+        <Route path="/product/budapest-booze-pizza" component={BudapestBoozeCruise} />
+        <Route path="/product/budapest-szentendre-river-cruise" component={BudapestHistorical} />
+        <Route path="/event-venues-in-budapest" component={EventBudapest} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/cruise-shop" component={Shop} />
         <Route path="*" component={ExampleRouteHandler} />
       </Switch>
     </div>

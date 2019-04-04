@@ -21,7 +21,7 @@ class Footer extends PureComponent {
             <div className="col-sm-4">
               <span className={styles.title}>{this.state.titleOne}</span>
               <div>iconok</div>
-              <div><img src="https://silver-line.hu/wp-content/uploads/2018/10/simplepay_bankccard_logos_top_02.png" alt="fizetes" /></div>
+              <div><img className={styles.logo} src="https://silver-line.hu/wp-content/uploads/2018/10/simplepay_bankccard_logos_top_02.png" alt="fizetes" /></div>
             </div>
             <div className="col-sm-4">
               <span className={styles.title}>{this.state.titleTwo}</span>
