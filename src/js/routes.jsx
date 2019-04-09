@@ -236,14 +236,14 @@ const Shop = () => (
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
-        <ProductCard url="http://localhost:8080/product/hungarian-folklore-and-dinner-cruise" price="55" name="HUNGARIAN FOLKLORE AND DINNER CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
-        <ProductCard url="http://localhost:8080/product/budapest-river-cruise-piano-battle-show" price="55" name="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
-        <ProductCard url="http://localhost:8080/product/budapest-wine-tasting" price="55" name="WINE TASTING BUDAPEST WITH TASTE AND PLAY" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
-        <ProductCard price="29" name="BUDAPEST BOOZE & PIZZA CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
-        <ProductCard price="14" name="BUDAPEST DANUBE CRUISE – 75 MINUTES SIGHTSEEING" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-008-300x300.jpg" />
-        <ProductCard price="83" name="BUDAPEST CHRISTMAS EVE CRUISE DINNER" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/haj%C3%B3z%C3%A1s-budapesten-kar%C3%A1csonykor-300x300.jpg" />
-        <ProductCard price="173" name="NEW YEARS EVE BUDAPEST DINNER CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/Budapest-newyearseve-300x300.jpg" />
-        <ProductCard price="73" name="BUDAPEST VALENTINE’S DAY – DINNER WITH CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/07/romantic-budapest-cruise-300x300.jpg" />
+        <ProductCard productLink="/product/hungarian-folklore-and-dinner-cruise" imgAlt="Wine Cruise" productPrice="55" productName="HUNGARIAN FOLKLORE AND DINNER CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
+        <ProductCard productLink="/product/budapest-river-cruise-piano-battle-show" imgAlt="Wine Cruise" productPrice="55" productName="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
+        <ProductCard productLink="/product/budapest-wine-tasting" imgAlt="Wine Cruise" productPrice="55" productName="WINE TASTING BUDAPEST WITH TASTE AND PLAY" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
+        <ProductCard productLink="/product/budapest-booze-pizza" imgAlt="Wine Cruise" productPrice="29" productName="BUDAPEST BOOZE & PIZZA CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
+        <ProductCard productLink="/budapest-sightseeing-river-cruise" imgAlt="Wine Cruise" productPrice="14" productName="BUDAPEST DANUBE CRUISE – 75 MINUTES SIGHTSEEING" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-008-300x300.jpg" />
+        <ProductCard productLink="/product/budapest-christmas-eve-cruise-dinner" imgAlt="Wine Cruise" productPrice="83" productName="BUDAPEST CHRISTMAS EVE CRUISE DINNER" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/haj%C3%B3z%C3%A1s-budapesten-kar%C3%A1csonykor-300x300.jpg" />
+        <ProductCard productLink="/product/newyearsevebudapest-dinner-cruise" imgAlt="Wine Cruise" productPrice="173" productName="NEW YEARS EVE BUDAPEST DINNER CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/Budapest-newyearseve-300x300.jpg" />
+        <ProductCard productLink="/product/budapest-valentines-day-dinner-with-cruise" imgAlt="Wine Cruise" productPrice="73" productName="BUDAPEST VALENTINE’S DAY – DINNER WITH CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/07/romantic-budapest-cruise-300x300.jpg" />
       </div>
     </div>
   </div>

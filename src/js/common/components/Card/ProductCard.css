@@ -1,23 +1,40 @@
-.hasznald{
+.box{
     margin: 10px 5px; 
     overflow: hidden;
     background-color: #ffdfdf;
-    border:solid 2px white;
-    
+    border:solid 2px white; 
 }
 
-.hasznald > div > img{
+.box > div > img{
     transition: all 0.5s;
 }
 
+.box > div > .bookNow{
+    animation-duration: 1s;
+    animation-name: slidein;
+}
 
-.hasznald:hover{
+
+.box:hover{
     img{
         transform: scale(1.1);
+        filter: blur(2px);
     }
 
     border:solid 2px #f5cece;
     
+    .bookNow{
+        display:block;
+    }
+}
+
+.productLink{
+    color:unset;
+}
+
+.productLink:hover{
+    color:unset;
+    text-decoration:unset;
 }
 
 .CardName{
@@ -43,3 +60,26 @@
 .CardUrl:hover{
     color:unset;
 }
+
+.bookNow{
+    position: absolute;
+    top:30%;
+    left:30%;
+    padding:5px;
+    border:solid 2px white;
+    background-color:#000000b8;
+    color:white;
+    display:none;
+}
+
+@keyframes slidein {
+    from {
+      left:10%;
+    
+    }
+  
+    to {
+      left:30%;
+     
+    }
+  }

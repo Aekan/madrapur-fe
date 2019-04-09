@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-
 import styles from './Header.css';
 
 class Header extends PureComponent {
@@ -53,7 +52,7 @@ class Header extends PureComponent {
                 </li>
                 <li className="dropdown">
                   <a href="#" data-toggle="dropdown" className="dropdown-toggle">Budapest Cruises<b className="caret"></b></a>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
                     <li className={!isSightSeeingCruise ? styles.active : ''}>
                       {
                         isSightSeeingCruise
@@ -70,7 +69,7 @@ class Header extends PureComponent {
                 </li>
                 <li className="dropdown">
                   <a href="#" data-toggle="dropdown" className="dropdown-toggle">Dinner cruises<b className="caret"></b></a>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
                     <li className={!isBudapestPianoShow ? styles.active : ''}>
                       {
                           isBudapestPianoShow
@@ -129,7 +128,7 @@ class Header extends PureComponent {
                 </li>
                 <li className="dropdown">
                   <a href="#" data-toggle="dropdown" className="dropdown-toggle">Contact<b className="caret"></b></a>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
                     <li className={!isPrivacy ? styles.active : ''}>
                       {
                           isPrivacy

@@ -51,10 +51,10 @@ class ExampleView extends Component {
           </div>
           <div className="col-lg-12" style={{ margin: '40px 0px 0px 0px', background: '#fffbfb' }}>
             <div className={styles.Featured}>Featured Products</div>
-            <ProductCard url="http://localhost:8080/product/hungarian-folklore-and-dinner-cruise" price="55" name="HUNGARIAN FOLKLORE AND DINNER CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
-            <ProductCard url="http://localhost:8080/product/budapest-river-cruise-piano-battle-show" price="55" name="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
-            <ProductCard url="http://localhost:8080/product/budapest-wine-tasting" price="55" name="WINE TASTING BUDAPEST WITH TASTE AND PLAY" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
-            <ProductCard price="29" name="BUDAPEST BOOZE & PIZZA CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
+            <ProductCard productLink="/product/hungarian-folklore-and-dinner-cruise" imgAlt="Wine Cruise" productPrice="55" productName="HUNGARIAN FOLKLORE AND DINNER CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
+            <ProductCard productLink="/product/budapest-river-cruise-piano-battle-show" imgAlt="Wine Cruise" productPrice="55" productName="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
+            <ProductCard productLink="/product/budapest-wine-tasting" imgAlt="Wine Cruise" productPrice="55" productName="WINE TASTING BUDAPEST WITH TASTE AND PLAY" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
+            <ProductCard productLink="/product/budapest-booze-pizza" imgAlt="Wine Cruise" productPrice="29" productName="BUDAPEST BOOZE & PIZZA CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
           </div>
           <div className="col-lg-12" style={{ margin: '20px 0px' }}>
           During sightseeing on board, on the Danube you have the chance to admire wooded areas and hills of Buda with the unique Matthias Church and Fisherman’s Bastion.
@@ -63,7 +63,7 @@ class ExampleView extends Component {
           So it is not an exaggeration to say during enjoying Budapest river cruise, you must stare the breath-taking Danube panorama as a so-called incomparable scene throughout Europe.
           Budapest river cruise offered by Silver-line provides excellent choice to celebrate some special occasions for example a wedding anniversary, birthday, Valentine’s day or any other remarkable feasts, having a luxurious Budapest river cruise with tasty dinner, enjoying elegant live show.
           All our Budapest river cruise programs are available in winters and summers, too.
-          Luxurious catamaran is heated in winters but air-conditioned in hot summers so we are always able to provide you to feel the maximum comfort. 
+          Luxurious catamaran is heated in winters but air-conditioned in hot summers so we are always able to provide you to feel the maximum comfort.
           Join us and have an unforgettable journey!
           Seasonal Budapest river cruise, having various themes provide you to choose the perfect program from a simple sightseeing tour to a whole night dinner cruise with piano or folklore show and so much enjoyment. Each Budapest river cruise program guarantees unforgettable experiences for guests. Choose the most favourable Budapest river cruise program and be the part of a so special treat never to be forgotten.
           </div>
