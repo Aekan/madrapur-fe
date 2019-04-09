@@ -5,16 +5,18 @@ import {
   Switch,
   withRouter,
 } from 'react-router-dom'
-
-import LazyLoading from 'common/components/LazyLoading'
+import LazyLoading from 'common/components/LazyLoading';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-import styles from '../style/index.css'
+import ProductCard from 'common/components/Card/ProductCard';
+import styles from '../style/index.css';
+
 
 // This is show case how you can lazy loading component
 const ExampleRouteHandler = LazyLoading(() => import('views/example'))
 const Header = LazyLoading(() => import('common/components/Header/Header'))
 const Footer = LazyLoading(() => import('common/components/Footer/Footer'))
+
 
 // Please remove that, it is an example
 const BudapestCruises = () => (
@@ -135,15 +137,15 @@ const BudapestPianoShow = () => (
         <div className="content" style={{'font-family': 'Helvetica !important', 'font-size': '16px !important', margin: '0 0 20px'}}>
         To whom can we offer our Budapest River Cruise?
         Visitors who would like to drink a glass of wine and wish for nice speech with their lovers while they listening nice music behind.
-        
+
         The musicians and singers will take care of great ambience while you can watch the whole city around you.
-        
+
         Our Boat has two levels; one of them provides a Hungarian Folklore and Operetta Show, which is also very popular.
-        
+
         During the cruising in Budapest, you can taste typical Hungarian dishes served as a 4-course menu, including appetizers in pastry basket with four different stuffing. When you start your dinner and cruise, you will can clink with a glass of welcome drink, which is optional from soft drinks or champagne.
-        
+
         Finishing with the tasty appetizers prepared by a chef who gained Michelin Star, choose from two different kinds of soups, such as Vegetarian Goulash, containing the best qualified Hungarian vegetables, such as carrot or potato, yellow onion, garlic or apiaceous. The other special soup might be optionally chosen as the well-known pumpkin cream soup with roasted pumpkin seeds.
-        
+
         After you finished with the first two meals, you can take around on the boat; desire the beautiful views and sights of Budapest, taking wonderful selfies with the Paris of East behind you.
         </div>
       </div>
@@ -208,6 +210,7 @@ const BudapestSightseeingCruise = () => (
     <div className="row">
       <div className="col-lg-4 aside" style={{float: 'left'}}>
         {<BasicConcepts />}
+
       </div>
       <div className="col-lg-8 product" style={{float: 'left'}}>
     a
@@ -233,7 +236,14 @@ const Shop = () => (
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
-       a
+        <ProductCard url="http://localhost:8080/product/hungarian-folklore-and-dinner-cruise" price="55" name="HUNGARIAN FOLKLORE AND DINNER CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
+        <ProductCard url="http://localhost:8080/product/budapest-river-cruise-piano-battle-show" price="55" name="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
+        <ProductCard url="http://localhost:8080/product/budapest-wine-tasting" price="55" name="WINE TASTING BUDAPEST WITH TASTE AND PLAY" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
+        <ProductCard price="29" name="BUDAPEST BOOZE & PIZZA CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
+        <ProductCard price="14" name="BUDAPEST DANUBE CRUISE – 75 MINUTES SIGHTSEEING" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-008-300x300.jpg" />
+        <ProductCard price="83" name="BUDAPEST CHRISTMAS EVE CRUISE DINNER" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/haj%C3%B3z%C3%A1s-budapesten-kar%C3%A1csonykor-300x300.jpg" />
+        <ProductCard price="173" name="NEW YEARS EVE BUDAPEST DINNER CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/Budapest-newyearseve-300x300.jpg" />
+        <ProductCard price="73" name="BUDAPEST VALENTINE’S DAY – DINNER WITH CRUISE" src="https://budapestrivercruise.co.uk/wp-content/uploads/2018/07/romantic-budapest-cruise-300x300.jpg" />
       </div>
     </div>
   </div>
@@ -271,6 +281,7 @@ const BudapestHistorical = () => (
     </div>
   </div>
 )
+
 
 // This show case how you can access routing info in your component
 const HeaderWithRouter = withRouter((props) => <Header {...props} />)

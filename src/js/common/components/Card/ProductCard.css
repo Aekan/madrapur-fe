@@ -1,0 +1,45 @@
+.hasznald{
+    margin: 10px 5px; 
+    overflow: hidden;
+    background-color: #ffdfdf;
+    border:solid 2px white;
+    
+}
+
+.hasznald > div > img{
+    transition: all 0.5s;
+}
+
+
+.hasznald:hover{
+    img{
+        transform: scale(1.1);
+    }
+
+    border:solid 2px #f5cece;
+    
+}
+
+.CardName{
+    margin: 15px 0px;
+    text-decoration:none;
+    padding: 0px 10px;
+    font-size:14px;
+    text-align: center;
+}
+
+.CardPrice{
+    text-align:center;
+    text-decoration:none;
+    margin: 5px 0px;
+    font-weight: 700;
+}
+
+.CardUrl{
+    text-decoration: none!important;
+    color:unset;
+}
+
+.CardUrl:hover{
+    color:unset;
+}

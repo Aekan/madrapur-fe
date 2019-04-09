@@ -2,3 +2,9 @@ h1{
     text-align:center;
 }
 
+.Featured{
+    font-size:25px;
+    border-bottom: 2px solid #d36e52;
+    color: #d36e52;
+}
+
