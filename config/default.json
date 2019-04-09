@@ -3,7 +3,7 @@
   "host": "localhost",
   "port": "8080",
   "publicPath": "/",
-  "assetPath": "./assets/134160ae",
+  "assetPath": "react-bundle",
   "jsSourcePath": "src/js",
   "optimization": {
     "analyzeMode": true,
