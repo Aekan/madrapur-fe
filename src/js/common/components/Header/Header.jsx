@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
+
 import styles from './Header.css';
 
 class Header extends PureComponent {
@@ -19,7 +20,7 @@ class Header extends PureComponent {
     const isHistorical = pathname === '/product/budapest-szentendre-river-cruise';
     const isEventBudapest = pathname === '/event-venues-in-budapest';
     const isPrivacy = pathname === '/privacy-policy'
-    const isShop = pathname === '/cruise-shop';
+    const isShop = pathname === '/shop';
 
     return (
       <header className={styles.globalHeader}>
@@ -52,7 +53,7 @@ class Header extends PureComponent {
                 </li>
                 <li className="dropdown">
                   <a href="#" data-toggle="dropdown" className="dropdown-toggle">Budapest Cruises<b className="caret"></b></a>
-                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
+                  <ul className="dropdown-menu">
                     <li className={!isSightSeeingCruise ? styles.active : ''}>
                       {
                         isSightSeeingCruise
@@ -69,7 +70,7 @@ class Header extends PureComponent {
                 </li>
                 <li className="dropdown">
                   <a href="#" data-toggle="dropdown" className="dropdown-toggle">Dinner cruises<b className="caret"></b></a>
-                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
+                  <ul className="dropdown-menu">
                     <li className={!isBudapestPianoShow ? styles.active : ''}>
                       {
                           isBudapestPianoShow
@@ -123,12 +124,15 @@ class Header extends PureComponent {
                 <li className={!isShop ? styles.active : ''}>
                   {
                     isShop
-                      ? 'Shop' : <Link to="/cruise-shop">Shop</Link>
+                      ? 'Shop' : <Link to="/shop">Shop</Link>
                   }
                 </li>
                 <li className="dropdown">
-                  <a href="#" data-toggle="dropdown" className="dropdown-toggle">Contact<b className="caret"></b></a>
-                  <ul className="dropdown-menu" style={{ padding:'0px' }}>
+                  <a href="/#" data-toggle="dropdown" className="dropdown-toggle">
+                    Contact
+                    <b className="caret" />
+                  </a>
+                  <ul className="dropdown-menu">
                     <li className={!isPrivacy ? styles.active : ''}>
                       {
                           isPrivacy

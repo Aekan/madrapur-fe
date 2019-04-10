@@ -8,11 +8,11 @@
 // Please note that by using html5 history api, you need to setup your
 // static server to handle url accordingly. If you are not sure what it is, please
 // don't make changes in here.
-import createHistory from 'history/createBrowserHistory'
+const createHistory = require('history').createBrowserHistory;
 
 // import createHistory from 'history/createHashHistory'
 
-const history = createHistory()
+const history = createHistory();
 
 // Exposing history for deep integration needs
 // For example, saga and utilities

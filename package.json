@@ -87,8 +87,10 @@
     "webpack-s3-plugin": "^1.0.3"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "history": "^4.7.2",
     "immutable": "^4.0.0-rc.12",
+    "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-datepicker": "^2.3.0",
