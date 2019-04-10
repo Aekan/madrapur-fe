@@ -64,6 +64,8 @@ class ShopView extends Component {
       }
     );
 
+    console.log(response);
+
     return (
       <div className="container">
         <div className="row">
