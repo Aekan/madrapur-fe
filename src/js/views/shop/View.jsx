@@ -49,7 +49,7 @@ class ShopView extends Component {
     );
 
     const response = axios.post(
-      'http://api.modulus.hu/v1/Worker', {
+      'http://api.modulus.hu/v1/worker', {
         jsonrpc: '2.0',
         id: '1',
         method: 'product',
