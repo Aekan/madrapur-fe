@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import styles from './ProductCard.css'
 
 const ProductCard = (props) => {
-let productLink = props.productLink ? props.productLink : '/';
+  const productLink = props.productLink ? props.productLink : '/';
+  const { imgSrc } = props;
+  const { imgAlt } = props;
+  const { productName } = props;
+  const { productPrice } = props;
   return (
     <div
       className="col-sm-3"
@@ -12,16 +16,16 @@ let productLink = props.productLink ? props.productLink : '/';
       <Link className={styles.productLink} to={productLink}>
         <div className={styles.box}>
           <div style={{ overflow: 'hidden' }}>
-            <img src={props.imgSrc} alt={props.imgAlt} width="100%" />
+            <img src={imgSrc} alt={imgAlt} width="100%" />
             <span className={styles.bookNow}>BOOK NOW</span>
           </div>
           <div className={styles.CardName}>
-            {props.productName}
+            {productName}
           </div>
           <div className={styles.CardPrice}>
         From:
             {' '}
-            {props.productPrice}
+            {productPrice}
             {' '}
 $
           </div>
