@@ -1,0 +1,17 @@
+.socialIcons{
+    padding: 0px;
+    list-style: none;
+    display:flex;
+
+    li{
+      background-color: #000000b8!important;
+      padding: 5px 15px;
+      border-bottom: 2px solid white;
+
+      svg{
+          color:white;
+          font-size:20px;
+      }
+    }
+}
+

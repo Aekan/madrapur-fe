@@ -1,10 +1,106 @@
 h1{
     text-align:center;
+    color:#d36e52;
+    margin-bottom:20px;
 }
 
 .Featured{
     font-size:25px;
     border-bottom: 2px solid #d36e52;
     color: #d36e52;
+}
+
+h2{
+    text-align:center;
+    color:#d36e52;
+    margin-bottom:20px;
+}
+
+.contact{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2019/02/CONTACT-INFO-min.jpg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    background-attachment:scroll;
+}
+
+.seoBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/07/texture.jpg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    background-attachment:scroll
+}
+
+.underSeoBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2019/02/budapestrivercruise-v1-min.png);
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:auto;
+    background-attachment:scroll
+}
+
+.PianoBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2019/02/budapestdinnercruise-v2-e1537872102617-min.png);
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:contain;
+    background-attachment:fixed
+}
+
+.FolkloreBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2019/02/budapestrivercruises-v3-min.png);
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:contain;
+    background-attachment:fixed
+}
+
+.SightseeingBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/budapestsightseeingcruise01-min.png);
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    background-size:auto;
+    background-attachment:scroll
+}
+
+.PizzaBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/pizzaandbeercruisebudapest-v-min.jpg);
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:contain;
+    background-attachment:fixed
+}
+
+.august20Block{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/fireworkcruise-budapest-1-min.png);
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:contain;
+    background-attachment:fixed
+}
+
+.christmasBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/christmascruisebudapest-min.png);
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:contain;
+    background-attachment:fixed
+}
+
+.valentineBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/valentinedaycruisebudapest-min.jpg);
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:cover;
+    background-attachment:fixed
+}
+
+.newYearsBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/newyearsevecruisebudapest-min.jpg);
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:contain;
+    background-attachment:fixed
 }
 
