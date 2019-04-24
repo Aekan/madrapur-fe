@@ -19,7 +19,10 @@ const Footer = LazyLoading(() => import('common/components/Footer/Footer'))
 
 
 const BudapestCruises = () => (
-  <ProductContainer sideBar={<DayTimePicker />} content="2" />
+  <ProductContainer
+    sideBar={<DayTimePicker />}
+    content="2"
+  />
 )
 
 const BudapestWineTasting = () => (
@@ -47,7 +50,25 @@ const BudapestNewYearsCruise = () => (
 )
 
 const BudapestSightseeingCruise = () => (
-  <ProductContainer sideBar={<DayTimePicker />} content="2" />
+  <ProductContainer
+    sideBar={<DayTimePicker />}
+    content="Budapest Sightseeing River Cruise
+  Sightseeing cruise in Budapest is one of the most popular program on the Danube
+  Each tourist would gladly desire to visit the whole Budapest, its significant parts and spectacles.
+  Reach all monuments by a Budapest river cruise on the Danube to be able to explore the magnificent panorama for which millions of guests are travelling to here year by year.
+  The amazing panoramic view with its natural and historical uniqueness observed from the ship provides you a never-to-be-forgotten event.
+  When and where are you able to reach us?
+  Budapest river cruise is available any time of the day starting from 11.00 am until 10.30 pm on a newly renovated,
+  kept maintained and convenient ship leaving from the Dock 11 near Elisabeth Bridge at Pest side.
+  It is no exaggeration to mention that sightseeing cruise is a perfect occasion for admiring both sides of Budapest as Pest and Buda as well their gorgeous views,
+  Fisherman’s Bastion, Buda Hill, the Hungarian Parliament, Gellért Hill, National Theatre,
+  Royal Palace and the famous Széchenyi Chain Bridge – being the parts of UNESCO World Heritage - lit up at night as an illustration.
+  So choose the 75-minute Budapest river cruise on the Danube, being available in several languages provided by audio guide,
+  sit on a comfort place and learn some interesting facts about our lovely town.
+  You must be hungry meanwhile the boat keep you rocking thus having the possibility taste delicious street foods – like hot dog,
+  panini (Mortadella Classic, Parma Grande, Greek Chicken, BBQ Pork), piadina (Caprese, Quattro Formaggi, al’Prosciutto),
+  Belga waffeln or Chocolate fondant - with champagne, house wines or soft drinks, too."
+  />
 )
 
 const BudapestBoozeCruise = () => (
@@ -105,7 +126,7 @@ module.exports = (
     <div id="index" className={styles.content}>
       <Switch>
         <Route exact path="/" component={ExampleRouteHandler} />
-        <Route path="/budapest-cruises" component={BudapestCruises} />
+        <Route path="/product/budapest-cruises" component={BudapestCruises} />
         <Route path="/product/budapest-river-cruise-piano-battle-show" component={BudapestPianoShow} />
         <Route path="/product/hungarian-folklore-and-dinner-cruise" component={BudapestFolkloreShow} />
         <Route path="/product/budapest-wine-tasting" component={BudapestWineTasting} />

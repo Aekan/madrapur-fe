@@ -235,7 +235,8 @@ Budapest night cruise
                 <h2>Pizza and beer cruise </h2>
             Pizza and beer cruise is one of our options for Budapest sightseeing cruise.
             The price of pizza and beer cruise includes not only sightseeing ticket
-            but also a whole pizza (26 cm) with optional choice and unlimited beer and drink package.
+            but also a whole pizza (26 cm) with optional
+            choice and unlimited beer and drink package.
             See the most desirable panoramic views of the city, having a tasty
             pizza and some cool drinks. Have a nice dinner with your friends,
             family members even colleagues meanwhile having a
