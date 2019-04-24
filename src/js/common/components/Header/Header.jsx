@@ -20,7 +20,7 @@ class Header extends PureComponent {
     const isHistorical = pathname === '/product/budapest-szentendre-river-cruise';
     const isEventBudapest = pathname === '/event-venues-in-budapest';
     const isPrivacy = pathname === '/privacy-policy'
-    const isShop = pathname === '/cruise-shop';
+    const isShop = pathname === '/shop';
 
     return (
       <header>
@@ -113,7 +113,9 @@ CONTACT
                 </ul>
               </div>
             </nav>
-          </div>
+          </div>git submodule foreach --recursive git checkout .
+
+
         </div>
       </header>
     );

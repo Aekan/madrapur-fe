@@ -6,7 +6,6 @@ import {
   withRouter,
 } from 'react-router-dom'
 import LazyLoading from 'common/components/LazyLoading';
-import ProductCard from 'common/components/Card/ProductCard';
 import DayTimePicker from 'common/components/DayTimePicker/DayTimePicker';
 import ProductContainer from 'common/components/ProductContainer/ProductContainer';
 import styles from '../style/index.css';
@@ -75,22 +74,7 @@ const BudapestBoozeCruise = () => (
   <ProductContainer sideBar={<DayTimePicker />} content="2" />
 )
 
-const Shop = () => (
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-12">
-        <ProductCard productLink="/product/hungarian-folklore-and-dinner-cruise" imgAlt="Wine Cruise" productPrice="55" productName="HUNGARIAN FOLKLORE AND DINNER CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-river-cruise-piano-battle-show" imgAlt="Wine Cruise" productPrice="55" productName="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-wine-tasting" imgAlt="Wine Cruise" productPrice="55" productName="WINE TASTING BUDAPEST WITH TASTE AND PLAY" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-booze-pizza" imgAlt="Wine Cruise" productPrice="29" productName="BUDAPEST BOOZE & PIZZA CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-sightseeing-river-cruise" imgAlt="Wine Cruise" productPrice="14" productName="BUDAPEST DANUBE CRUISE – 75 MINUTES SIGHTSEEING" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-008-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-christmas-eve-cruise-dinner" imgAlt="Wine Cruise" productPrice="83" productName="BUDAPEST CHRISTMAS EVE CRUISE DINNER" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/haj%C3%B3z%C3%A1s-budapesten-kar%C3%A1csonykor-300x300.jpg" />
-        <ProductCard productLink="/product/newyearsevebudapest-dinner-cruise" imgAlt="Wine Cruise" productPrice="173" productName="NEW YEARS EVE BUDAPEST DINNER CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/02/Budapest-newyearseve-300x300.jpg" />
-        <ProductCard productLink="/product/budapest-valentines-day-dinner-with-cruise" imgAlt="Wine Cruise" productPrice="73" productName="BUDAPEST VALENTINE’S DAY – DINNER WITH CRUISE" imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2018/07/romantic-budapest-cruise-300x300.jpg" />
-      </div>
-    </div>
-  </div>
-)
+const Shop = LazyLoading(() => import('views/shop'));
 
 const EventBudapest = () => (
   <div className="container">
@@ -138,7 +122,7 @@ module.exports = (
         <Route path="/product/budapest-szentendre-river-cruise" component={BudapestHistorical} />
         <Route path="/event-venues-in-budapest" component={EventBudapest} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
-        <Route path="/cruise-shop" component={Shop} />
+        <Route path="/shop" component={Shop} />
         <Route path="*" component={ExampleRouteHandler} />
       </Switch>
     </div>
