@@ -4,10 +4,11 @@ import Enzyme, { shallow } from 'enzyme'
 import { Shop } from  '../../../src/js/common/components/Shop'
 
 const fixture = {
-  example: {
-    result: {
-      testing: 'data',
-    },
+  result: {
+    items: [],
+    addedItems: [],
+    total: 0,
+    currency: 'USD',
   },
 };
 
@@ -16,7 +17,7 @@ describe('ExampleView', () => {
     const el = shallow(<Shop />)
 
     expect(el.length).toEqual(1)
-    expect(el.find('.exampleOutput').length).toEqual(0)
+    expect(el.find('.shop-container').length).toEqual(0)
   })
 
   it('should render with correct data', () => {
@@ -25,6 +26,6 @@ describe('ExampleView', () => {
     )
 
     expect(el.length).toEqual(1)
-    expect(el.find('.exampleOutput').length).toEqual(1)
+    expect(el.find('.shop-container').length).toEqual(1)
   })
 })
