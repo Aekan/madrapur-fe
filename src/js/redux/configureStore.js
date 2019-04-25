@@ -7,6 +7,7 @@ import {
 
 import sagas from './sagas';
 import rootReducer from './rootReducers';
+import cartReducer from './cartReducers';
 
 // Redux DevTools Extension for Chrome and Firefox
 const reduxDevTool = () => {
@@ -28,6 +29,26 @@ export default function configureStore(initialState, history) {
   if (module.hot) {
     module.hot.accept('./rootReducers', () => {
       store.replaceReducer(require('./rootReducers'));
+    });
+  }
+
+  return store;
+}
+
+export function configureCartStore(initialState, history) {
+  const sagaMiddleware = createSagaMiddleware();
+
+  const middleware = applyMiddleware(sagaMiddleware);
+
+  const composedStoreEnhancer = compose(middleware, reduxDevTool());
+
+  const store = composedStoreEnhancer(createStore)(cartReducer, initialState);
+
+  sagaMiddleware.run(sagas);
+
+  if (module.hot) {
+    module.hot.accept('./cartReducers', () => {
+      store.replaceReducer(require('./cartReducers'));
     });
   }
 

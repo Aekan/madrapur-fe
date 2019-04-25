@@ -6,6 +6,7 @@ import routes from './routes'
 import Root from './Root'
 import configureStore from './redux/configureStore'
 import { history } from './app-history'
+import 'materialize-css/dist/css/materialize.min.css';
 
 let initialState = {}
 
