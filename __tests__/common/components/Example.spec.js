@@ -5,11 +5,12 @@ import { Shop } from  '../../../src/js/common/components/Shop'
 
 const fixture = {
   result: {
-    items: [],
-    addedItems: [],
-    total: 0,
-    currency: 'USD',
+    result: [],
   },
+  items: [],
+  addedItems: [],
+  total: 0,
+  currency: 'USD',
 };
 
 describe('ExampleView', () => {

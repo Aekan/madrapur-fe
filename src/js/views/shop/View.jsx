@@ -25,6 +25,7 @@ class ShopView extends Component {
     addedItems: PropTypes.array,
     total: PropTypes.number,
     currency: PropTypes.string,
+    result: PropTypes.object,
   };
 
   static defaultProps: shopType = {
@@ -32,7 +33,8 @@ class ShopView extends Component {
     addedItems: [],
     total: 0,
     currency: 'USD',
-  }
+    result: {},
+  };
 
   componentDidMount() {
     const { getShop } = this.props;
