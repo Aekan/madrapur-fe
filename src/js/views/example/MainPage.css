@@ -32,6 +32,7 @@ h2{
     background-attachment:scroll
 }
 
+@media only screen and (min-width:960px){
 .underSeoBlock{
     background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2019/02/budapestrivercruise-v1-min.png);
     background-repeat:no-repeat;
@@ -56,13 +57,6 @@ h2{
     background-attachment:fixed
 }
 
-.SightseeingBlock{
-    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/budapestsightseeingcruise01-min.png);
-    background-repeat:no-repeat;
-    background-position:center bottom;
-    background-size:auto;
-    background-attachment:scroll
-}
 
 .PizzaBlock{
     background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/pizzaandbeercruisebudapest-v-min.jpg);
@@ -103,4 +97,12 @@ h2{
     background-size:cover;
     background-attachment:fixed
 }
+}
 
+.SightseeingBlock{
+    background-image:url(https://budapestrivercruise.co.uk/wp-content/uploads/2018/09/budapestsightseeingcruise01-min.png);
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    background-size:auto;
+    background-attachment:scroll
+}

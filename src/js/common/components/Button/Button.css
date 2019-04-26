@@ -6,6 +6,11 @@
     color:white;
     background-color: #d36e52;
     margin:20px auto;
+    transition: all .4s ease-in-out;
+}
+
+.button:hover{
+    transform: scale(1.1);
 }
 
 .parent{
