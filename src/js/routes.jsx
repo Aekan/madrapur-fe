@@ -71,7 +71,7 @@ const BudapestSightseeingCruise = () => (
 )
 
 const BudapestBoozeCruise = () => (
-  <ProductContainer sideBar={<DayTimePicker />} content="2" />
+  <ProductContainer id="budapest-booze-cruize" sideBar="contact form" content="2" />
 )
 
 const ShopPage = (() => { return LazyLoading(() => import('views/shop')) })();
@@ -111,7 +111,7 @@ module.exports = (
       <Switch>
         <Route exact path="/" component={ExampleRouteHandler} />
         <Route path="/product/budapest-cruises" component={BudapestCruises} />
-        <Route path="/product/budapest-river-cruise-piano-battle-show" component={BudapestPianoShow} />
+        <Route path="/product/budapest-river-cruise-piano-battle-show" render={() => <BudapestBoozeCruise id="asd" />} />
         <Route path="/product/hungarian-folklore-and-dinner-cruise" component={BudapestFolkloreShow} />
         <Route path="/product/budapest-wine-tasting" component={BudapestWineTasting} />
         <Route path="/product/budapest-valentines-day-dinner-with-cruise" component={BudapestValentinesDay} />
