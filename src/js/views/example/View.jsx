@@ -1,45 +1,11 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable react/no-multi-comp */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable no-unused-vars */
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+/* eslint-disable max-len */
+import React from 'react';
 import ProductCard from 'common/components/Card/ProductCard';
 import Button from 'common/components/Button/Button';
-import LazyLoading from '../../common/components/LazyLoading'
-import { actions as exampleActions } from '../../redux/modules/example'
-import { exampleSelector } from '../../redux/selectors/exampleSelector'
-import { ExampleWithError } from '../../common/components/Example'
-import { ErrorBoundary } from '../../common/components/Utilities'
 import styles from './MainPage.css';
 
-const LazyExample = LazyLoading(() => import('../../common/components/Example/Example'))
-
-const mapStateToProps = (state) => ({
-  example: exampleSelector(state),
-})
-
-const mapDispatchToProps = {
-  ...exampleActions,
-}
-
-
-@connect(mapStateToProps, mapDispatchToProps)
-class Example extends Component {
-  static propTypes = {
-    example: PropTypes.object.isRequired,
-  }
-
-  componentDidMount() {
-    const { getAwesomeCode } = this.props
-
-    getAwesomeCode()
-  }
-
-  render() {
-    return (
+const ExampleView = () => {
+  return (
       <div>
         <div className={styles.seoBlock}>
           <div className="container">
@@ -392,11 +358,10 @@ Budapest night cruise
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-export default Example;
+export default ExampleView;
