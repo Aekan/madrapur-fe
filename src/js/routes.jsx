@@ -104,26 +104,21 @@ const BudapestHistorical = () => (
 // This show case how you can access routing info in your component
 const HeaderWithRouter = withRouter((props) => <Header {...props} />)
 
+const shopRender = () => {
+  return <ShopPage />;
+}
+
 module.exports = (
   <div className={styles.container}>
     <HeaderWithRouter />
     <div id="index" className={styles.content}>
       <Switch>
-        <Route exact path="/" component={ExampleRouteHandler} />
-        <Route path="/product/budapest-cruises" component={BudapestCruises} />
-        <Route path="/product/budapest-river-cruise-piano-battle-show" render={() => <BudapestBoozeCruise id="asd" />} />
-        <Route path="/product/hungarian-folklore-and-dinner-cruise" component={BudapestFolkloreShow} />
-        <Route path="/product/budapest-wine-tasting" component={BudapestWineTasting} />
-        <Route path="/product/budapest-valentines-day-dinner-with-cruise" component={BudapestValentinesDay} />
-        <Route path="/product/budapest-christmas-eve-cruise-dinner" component={BudapestChristmasCruise} />
-        <Route path="/product/newyearsevebudapest-dinner-cruise" component={BudapestNewYearsCruise} />
-        <Route path="/product/budapest-sightseeing-river-cruise" component={BudapestSightseeingCruise} />
-        <Route path="/product/budapest-booze-pizza" component={BudapestBoozeCruise} />
-        <Route path="/product/budapest-szentendre-river-cruise" component={BudapestHistorical} />
+        <Route exact path="/" render={shopRender} />
+        <Route path="/product/:id" component={ShopPage} />
         <Route path="/event-venues-in-budapest" component={EventBudapest} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/cruise-shop" component={ShopPage} />
-        <Route path="*" component={ExampleRouteHandler} />
+        <Route path="*" component={ShopPage} />
       </Switch>
     </div>
     <Footer />

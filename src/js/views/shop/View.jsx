@@ -5,6 +5,7 @@ import LazyLoading from '../../common/components/LazyLoading';
 import { actions as shopActions } from '../../redux/modules/shop';
 import { shopSelector } from '../../redux/selectors/shopSelector';
 import { ErrorBoundary } from '../../common/components/Utilities';
+import ProductContainer from '../../common/components/ProductContainer/ProductContainer';
 
 import type { shopType } from '../../common/types/shop';
 
@@ -37,12 +38,27 @@ class ShopView extends Component {
   };
 
   componentDidMount() {
-    const { getShop } = this.props;
+    const { getShop, match } = this.props;
+
+    console.warn(this.props, "MUHAHA");
+
+    this.setState({
+      match,
+    });
 
     getShop();
   }
 
+
+
   render() {
+    const { match } = this.state;
+    let element;
+
+    if (match) {
+      element = <ProductContainer key="match." />;
+    }
+
     return (
       <div className="container">
         <div className="row">

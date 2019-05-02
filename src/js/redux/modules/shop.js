@@ -16,6 +16,7 @@ export const constants = {
 // ------------------------------------
 export const getShop = createAction(GET_SHOP, () => ({}));
 export const updateShop = createAction(UPDATE_SHOP, (result) => ({ result }));
+export const Shop = createAction(UPDATE_SHOP, (result) => ({ result }));
 
 export const actions = {
   getShop,
