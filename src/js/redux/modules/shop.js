@@ -43,6 +43,7 @@ export const initialState = () => Map({
     status: 'active',
     thumbnail: '',
     title: 'Budapest Dinner Cruise ',
+    slug: 'budapest-dinner-cruise',
   },
   items: [],
   addedItems: [],

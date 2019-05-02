@@ -14,7 +14,7 @@ const ProductList = (props) => {
 
           return (
             <ProductCard
-              productLink={product.title}
+              productLink={product.slug}
               imgAlt="Wine Cruise"
               productPrice={price}
               productName={product.title}

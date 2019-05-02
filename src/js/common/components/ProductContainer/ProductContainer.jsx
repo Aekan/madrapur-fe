@@ -9,7 +9,8 @@ const ProductContainer = (props) => {
     <div className="container">
       <div className="row">
         <div className="col-lg-4 aside" style={{ float: 'left' }}>
-          { sideBar } { id }
+          { sideBar }
+          { id }
         </div>
         <div className="col-lg-8">
           { content.description }
