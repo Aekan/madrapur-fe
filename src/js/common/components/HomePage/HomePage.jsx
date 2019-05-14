@@ -1,14 +1,16 @@
-/* eslint-disable max-len */
-import React from 'react';
-import ProductCard from 'common/components/Card/ProductCard';
-import Button from 'common/components/Button/Button';
-import styles from './MainPage.css';
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/no-danger */
+import React, { PureComponent } from 'react';
+import Button from '../Button/Button';
+import ProductCard from '../Card/ProductCard';
+import styles from './HomePage.css';
 
-const ExampleView = () => {
-  return (
+class HomePage extends PureComponent {
+  render() {
+    return (
       <div>
         <div className={styles.seoBlock}>
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-lg-12">
                 <h1 style={{ margin: '30px 0px' }}>Budapest River Cruise</h1>
@@ -31,8 +33,8 @@ const ExampleView = () => {
                 <div className={styles.Featured}>Featured Products</div>
                 <ProductCard productLink="/product/hungarian-folklore-and-dinner-cruise" imgAlt="Wine Cruise" productPrice="55" productName="HUNGARIAN FOLKLORE AND DINNER CRUISE" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg" />
                 <ProductCard productLink="/product/budapest-river-cruise-piano-battle-show" imgAlt="Wine Cruise" productPrice="55" productName="BUDAPEST RIVER CRUISE & PIANO BATTLE SHOW" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2018/02/bp-river-001-300x300.jpg" />
-                <ProductCard productLink="/product/budapest-wine-tasting" imgAlt="Wine Cruise" productPrice="55" productName="WINE TASTING BUDAPEST WITH TASTE AND PLAY" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
-                <ProductCard productLink="/product/budapest-booze-pizza" imgAlt="Wine Cruise" productPrice="29" productName="BUDAPEST BOOZE & PIZZA CRUISE" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
+                <ProductCard productLink="/product/wine-tasting-budapest-with-taste-and-play" imgAlt="Wine Cruise" productPrice="55" productName="WINE TASTING BUDAPEST WITH TASTE AND PLAY" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2018/12/wine-cruise-300x300.jpg" />
+                <ProductCard productLink="/product/budapest-booze-pizza-cruise" imgAlt="Wine Cruise" productPrice="29" productName="BUDAPEST BOOZE & PIZZA CRUISE" imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2017/11/pizza-beer-cruises-budapest-300x300.jpg" />
               </div>
             </div>
           </div>
@@ -122,10 +124,10 @@ const ExampleView = () => {
             <div className="row">
               <div className="col-lg-9" style={{ margin: '20px 0px', textAlign: 'center' }}>
                 <h2>
-Dinner cruise with operetta and folklore show
+  Dinner cruise with operetta and folklore show
                   {' '}
                   <br />
-Budapest night cruise
+  Budapest night cruise
                 </h2>
           Dinner cruise with operetta and folklore show is one of the most popular
           sightseeing tours. As having a proper cruise, lasting for 3 hours, you might have the
@@ -188,7 +190,7 @@ Budapest night cruise
           you delicious street food options. Sit back in comfort,
           enjoy cradling by boat, touching your face by warmish wind and
           experience the wonderful panoramic view of Budapest.
-                <Button link="/product/budapest-sightseeing-river-cruise" buttonLabel="BOOK NOW" />
+                <Button link="/product/budapest-danube-cruise-75-minutes-sightseeing" buttonLabel="BOOK NOW" />
                 <hr />
               </div>
             </div>
@@ -201,13 +203,12 @@ Budapest night cruise
                 <h2>Pizza and beer cruise </h2>
             Pizza and beer cruise is one of our options for Budapest sightseeing cruise.
             The price of pizza and beer cruise includes not only sightseeing ticket
-            but also a whole pizza (26 cm) with optional
-            choice and unlimited beer and drink package.
+            but also a whole pizza (26 cm) with optional choice and unlimited beer and drink package.
             See the most desirable panoramic views of the city, having a tasty
             pizza and some cool drinks. Have a nice dinner with your friends,
             family members even colleagues meanwhile having a
             75-minute sightseeing Budapest boat tour.
-                <Button link="/product/budapest-booze-pizza" buttonLabel="BOOK NOW" />
+                <Button link="/product/budapest-booze-pizza-cruise" buttonLabel="BOOK NOW" />
               </div>
             </div>
           </div>
@@ -358,10 +359,11 @@ Budapest night cruise
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default ExampleView;
+export default HomePage;

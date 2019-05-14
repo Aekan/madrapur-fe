@@ -10,7 +10,7 @@ export const handleRequest = (URL, params = {}) => {
     .get(resourceURL, params)
     .then((response) => {
       responseData.push(response.data);
-      console.warn(response.data);
+      console.warn(response.data, "EZAZAZAZAZA");
     })
     .catch((error) => {
       responseData = error;

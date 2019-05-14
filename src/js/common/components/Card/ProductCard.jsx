@@ -8,12 +8,16 @@ const ProductCard = (props) => {
   const { imgAlt } = props;
   const { productName } = props;
   const { productPrice } = props;
+  const { productCardOnClickCb } = props;
+
+  console.log(props);
+
   return (
     <div
       className="col-sm-3"
       style={{ display: 'inline-block' }}
     >
-      <Link className={styles.productLink} to={productLink}>
+      <Link className={styles.productLink} to={productLink} onClick={productCardOnClickCb}>
         <div className={styles.box}>
           <div style={{ overflow: 'hidden' }}>
             <img src={imgSrc} alt={imgAlt} width="100%" />
@@ -23,11 +27,11 @@ const ProductCard = (props) => {
             {productName}
           </div>
           <div className={styles.CardPrice}>
-        From:
+            From:
             {' '}
             {productPrice}
             {' '}
-$
+            $
           </div>
         </div>
       </Link>

@@ -2,28 +2,35 @@ import React from 'react';
 import ProductCard from '../Card/ProductCard';
 
 const ProductList = (props) => {
-  const { content } = props;
+  const { result, productCardOnClickCb } = props;
 
-  console.log(props)
+  console.log(props, 'prodlist');
+
   return (
     <div className="container">
       <div className="row">
-        {content.map((product, i) => {
+        {result.result.map((product, i) => {
           // Return the element. Also pass key
-          const { price } = product.prices ? product.prices.price : 0;
-
           const {
             slug,
             title,
+            id,
+            prices,
           } = product;
+
+          const price = prices && prices[0] ? prices[0].price : 0;
 
           return (
             <ProductCard
+              {...props}
+              productId={id}
               productLink={slug}
               imgAlt="Wine Cruise"
+              key={slug}
               productPrice={price}
               productName={title}
-              imgSrc="https://budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg"
+              imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg"
+              onClick={productCardOnClickCb}
             />
           );
         })}

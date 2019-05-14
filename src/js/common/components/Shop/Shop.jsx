@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
+import CheckoutContainer from '../CheckoutContainer/CheckoutContainer';
+import CartContainer from '../CartContainer/CartContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
 import ProductList from '../ProductList/ProductList';
+import HomePage from '../HomePage/HomePage';
 
 /**
  * Shop
@@ -8,28 +11,110 @@ import ProductList from '../ProductList/ProductList';
  *
  * @extends PureComponent
  */
-
 class Shop extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: [],
+    }
+
+    this.onBookNow = this.onBookNow.bind(this);
+  }
+
+  onBookNow(bookedProduct) {
+    const { items } = this.state;
+    const { history } = this.props;
+
+    console.log(this.state);
+    console.log('onBookNow', bookedProduct);
+
+    items.push(bookedProduct);
+
+    this.setState({
+      items,
+    });
+
+    history.push('/checkout');
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  productCardOnClickCb(event) {
+    console.log('cb', event);
+  }
+
   render() {
     const CartRequestResponse = this.props;
     const result = (CartRequestResponse && CartRequestResponse.result) || null;
+    const { match } = this.props;
 
-    console.warn(result, 'alius');
-    if (result) {
+    console.warn(match, 'alius');
+    if (match && match.path && match.isExact && match.path === '/') {
+      console.log('homepage', this.state);
+
       return (
-        <div className="container shop-container">
+        <div className="container-fluid home-container">
           <div className="row">
             <div className="col-lg-12">
-              {(result.result).map((products) => {
-                console.log('Entered', products);
-                // Return the element. Also pass key
-                return (<ProductList key="productList" content={products} />)
-              })}
+              <HomePage {...this.props} />
             </div>
           </div>
         </div>
       );
     }
+
+    if (match && match.path && match.isExact && match.path === '/cart') {
+      console.log('cart', this.state.items);
+
+      return (
+        <div className="container cart-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <CartContainer {...this.props} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (match && match.path && match.isExact && match.path === '/checkout') {
+      console.log('checkout', this.state.items);
+
+      return (
+        <div className="container checkout-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <CheckoutContainer {...this.props} {...this.state} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (match && match.params && match.params.productId && result) {
+      return (
+        <div className="container product-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <ProductContainer {...this.props} onBookNow={this.onBookNow} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (result && result.result) {
+      return (
+        <div className="container shop-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <ProductList key="productList" content={result.result} productCardOnClickCb={this.productCardOnClickCb} {...this.props} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="container shop-container-error">
         <div className="row">

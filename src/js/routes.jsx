@@ -102,11 +102,9 @@ const BudapestHistorical = () => (
 
 
 // This show case how you can access routing info in your component
-const HeaderWithRouter = withRouter((props) => <Header {...props} />)
+const HeaderWithRouter = withRouter((props) => <Header {...props} />);
 
-const shopRender = () => {
-  return <ShopPage />;
-}
+const shopRender = withRouter((props) => <ShopPage {...props} />);
 
 module.exports = (
   <div className={styles.container}>
@@ -114,11 +112,12 @@ module.exports = (
     <div id="index" className={styles.content}>
       <Switch>
         <Route exact path="/" render={shopRender} />
-        <Route path="/product/:id" component={ShopPage} />
-        <Route path="/event-venues-in-budapest" component={EventBudapest} />
+        <Route exact path="/cruise-shop" component={shopRender} />
+        <Route path="/product/:productId" component={shopRender} />
+        <Route path="/cart" component={shopRender} />
+        <Route path="/checkout" component={shopRender} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
-        <Route exact path="/cruise-shop" component={ShopPage} />
-        <Route path="*" component={ShopPage} />
+        <Route path="*" component={shopRender} />
       </Switch>
     </div>
     <Footer />

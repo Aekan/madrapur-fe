@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import styles from './CartMenu.css';
 
 const CartMenu = () => {
   return (
-    <nav className="nav-wrapper">
-      <div className="container">
-        <Link to="/" className="brand-logo">Shopping</Link>
-
-        <ul className="right">
-          <li><Link to="/cart">My cart</Link></li>
-          <li><Link to="/cart"><i className="material-icons">shopping_cart</i></Link></li>
-        </ul>
+    <div>
+      <div className={styles.cartHolder}>
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faShoppingCart} />
+          Cart
+        </Link>
       </div>
-    </nav>
+    </div>
   )
 }
 

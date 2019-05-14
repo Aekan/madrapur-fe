@@ -1,48 +1,64 @@
-import React from 'react'
+import React, { PureComponent } from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 
-export default class DayTimePicker extends React.Component {
+export default class DayTimePicker extends PureComponent {
   constructor(props) {
     super(props);
+    const { times } = this.props;
+
+    console.log(times, 'daytime')
+
     this.handleDayClick = this.handleDayClick.bind(this);
+    this.getDisabledDays = this.getDisabledDays.bind(this);
+
     this.state = {
       selectedDay: undefined,
+      times,
     };
   }
 
+  getDisabledDays(day) {
+    const { times } = this.props;
+
+    const isDisabled = times.some((time) => {
+      // TODO: range is [x, y); should be [x, y]
+      return (day < new Date(time.start_date) || day > new Date(time.end_date));
+    });
+
+    return isDisabled;
+  }
+
   handleDayClick(day, { selected, disabled }) {
-    if (disabled) {
-      // Day is disabled, do nothing
-      return;
-    }
+    if (disabled) return;
+
     if (selected) {
-      // Unselect the day if already selected
       this.setState({ selectedDay: undefined });
-      // beallitja a state erteket a pickelt napra
       return;
     }
+
     this.setState({ selectedDay: day });
   }
 
   render() {
+    const {
+      selectedDay,
+    } = this.state;
+
+    console.log('daypickerrender', this.props)
+
     return (
-      <div>
+      <div className="day-picker-div">
         <DayPicker
           onDayClick={this.handleDayClick}
-          selectedDays={this.state.selectedDay}
-          disabledDays={{ daysOfWeek: [0] }}
+          selectedDays={selectedDay}
+          disabledDays={this.getDisabledDays}
         />
-        {this.state.selectedDay ? (
-          <p>
-  You clicked
-            {' '}
-            {this.state.selectedDay.toLocaleDateString()}
-          </p>
-        ) : (
-          <p>Please select a day.</p>
-        )}
+
+        <p>
+          {selectedDay ? (selectedDay.toLocaleDateString()) : ('Please select a day.')}
+        </p>
       </div>
     );
   }

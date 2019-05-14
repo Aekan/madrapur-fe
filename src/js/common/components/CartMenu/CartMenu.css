@@ -1,0 +1,12 @@
+.cartHolder {
+    text-align: right;
+    
+
+    a {
+        color: #FFF;
+        font-size: 1.1275em;
+        padding: 10px;
+        background: #000000b8;
+        color: #FFF;
+    }
+}

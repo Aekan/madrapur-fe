@@ -6,13 +6,14 @@ import { getProductById, getProducts } from '../../common/api/index';
 import type { shopType } from '../../common/types/shop';
 
 export function* fetchShopData() {
-  const result = getProducts();
+  // const result = getProducts();
+  const result = yield fetch('http://api.modulus.hu/v1/rester/product').then((response) => response.json());
 
   yield put(shopActions.updateShop(result));
 }
 
 function* watchGetShop() {
-  yield takeEvery(shopConstants.GET_SHOP, fetchShopData);
+  yield takeLatest(shopConstants.GET_SHOP, fetchShopData);
 }
 
 export const shopSaga = [

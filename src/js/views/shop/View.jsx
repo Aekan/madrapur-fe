@@ -10,6 +10,7 @@ import ProductContainer from '../../common/components/ProductContainer/ProductCo
 import type { shopType } from '../../common/types/shop';
 
 const LazyShop = LazyLoading(() => import('../../common/components/Shop/Shop'));
+const LazyContainer = LazyLoading(() => import('../../common/components/ProductContainer/ProductContainer'));
 
 const mapStateToProps = (state) => ({
   result: shopSelector(state),
@@ -38,29 +39,14 @@ class ShopView extends Component {
   };
 
   componentDidMount() {
-    const { getShop, match } = this.props;
-
-    console.warn(this.props, "MUHAHA");
-
-    this.setState({
-      match,
-    });
+    const { getShop } = this.props;
 
     getShop();
   }
 
-
-
   render() {
-    const { match } = this.state;
-    let element;
-
-    if (match) {
-      element = <ProductContainer key="match." />;
-    }
-
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <Fragment>
             <ErrorBoundary>
