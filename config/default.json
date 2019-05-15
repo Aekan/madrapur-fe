@@ -25,6 +25,10 @@
   ],
   "app": {
     "description": "config inside 'app' will be injected to your frontend code automatically",
-    "API": "http://api.modulus.hu/v1/rester/"
+    "API": "https://api.modulus.hu/v1/rester/",
+    "METHODS": {
+      "GET": "GET",
+      "POST": "POST"
+    }
   }
 }
