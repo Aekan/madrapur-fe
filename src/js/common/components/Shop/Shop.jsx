@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
+import Cookies from 'universal-cookie';
+import { uuid } from '../Utilities/index';
 import CheckoutContainer from '../CheckoutContainer/CheckoutContainer';
 import CartContainer from '../CartContainer/CartContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
 import ProductList from '../ProductList/ProductList';
 import HomePage from '../HomePage/HomePage';
+import { createCart, addToCart, getCart } from '../../api/index';
 
 /**
  * Shop
@@ -20,6 +23,25 @@ class Shop extends PureComponent {
     }
 
     this.onBookNow = this.onBookNow.bind(this);
+    this.cookies = new Cookies();
+  }
+
+  componentDidMount() {
+    const cookieCartId = this.cookies.get('cartId');
+
+    if (!cookieCartId) {
+      const cartId = uuid('cart');
+
+      this.cookies.set('cartId', cartId, { path: '/' });
+
+      createCart(cartId);
+    } else {
+      const items = JSON.parse(getCart(`'${cookieCartId}'`));
+
+      this.setState({
+        items,
+      });
+    }
   }
 
   onBookNow(bookedProduct) {
@@ -34,6 +56,10 @@ class Shop extends PureComponent {
     this.setState({
       items,
     });
+
+    // delete items.product;
+
+    // addToCart(this.cookies.get('cartId'), JSON.stringify(items));
 
     history.push('/checkout');
   }

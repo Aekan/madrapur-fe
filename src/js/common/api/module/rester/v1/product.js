@@ -33,7 +33,7 @@ export const createCart = (cartId) => {
   const URL = 'ccart';
   const params = {
     params: {
-      cartId,
+      id: cartId,
     },
   };
 
@@ -44,8 +44,19 @@ export const addToCart = (cartId, items) => {
   const URL = 'ccadd';
   const params = {
     params: {
-      cartId,
+      id: cartId,
       items,
+    },
+  };
+
+  return handleRequest(URL, params);
+}
+
+export const getCart = (cartId) => {
+  const URL = 'getcart';
+  const params = {
+    params: {
+      id: cartId,
     },
   };
 

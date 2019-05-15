@@ -148,6 +148,8 @@ class CheckoutContainer extends PureComponent {
 
     const elements = items.map(
       (item) => {
+        if (!item) return;
+
         const {
           product,
           selectedDay,

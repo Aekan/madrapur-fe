@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import NumericInput from 'react-numeric-input';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import { getSpaces } from '../../api/index';
 import styles from './BookingForm.css'
 
 class BookingForm extends PureComponent {
@@ -202,6 +203,10 @@ class BookingForm extends PureComponent {
       this.setState({ selectedDay: undefined });
       return;
     }
+
+    const { product } = this.props;
+
+    console.warn('space', getSpaces(day.toLocaleDateString(), product.id));
 
     this.setState({ selectedDay: day });
   }
