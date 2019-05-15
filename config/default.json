@@ -25,7 +25,7 @@
   ],
   "app": {
     "description": "config inside 'app' will be injected to your frontend code automatically",
-    "API": "https://api.modulus.hu/v1/rester/",
+    "API": "//api.budapestrivercruise.co.uk/v1/rester/",
     "METHODS": {
       "GET": "GET",
       "POST": "POST"
