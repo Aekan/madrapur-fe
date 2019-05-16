@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import styles from './CheckoutContainer.css';
 import { addReservation } from '../../api/index';
+import { actionPay } from '../../api/module/rester/v1/product';
 
 class CheckoutContainer extends PureComponent {
   fields = [

@@ -73,3 +73,14 @@ export const addReservation = (data) => {
 
   return handleRequest(URL, params);
 }
+
+export const actionPay = (id) => {
+  const URL = 'add-reservation';
+  const params = {
+    params: {
+      id,
+    },
+  };
+
+  return handleRequest(URL, params);
+}

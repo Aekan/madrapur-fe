@@ -55,8 +55,6 @@ class ProductContainer extends PureComponent {
         }
       });
 
-      console.log(currProduct.prices, 'getCurrentProduct');
-
       return currProduct;
     }
 
