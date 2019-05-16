@@ -5,4 +5,5 @@ export {
   createCart,
   addToCart,
   getCart,
+  addReservation,
 } from './module/rester/v1/product';

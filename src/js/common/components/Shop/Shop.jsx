@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Cookies from 'universal-cookie';
-import { uuid } from '../Utilities/index';
+import { uuid, arrDiff } from '../Utilities/index';
 import CheckoutContainer from '../CheckoutContainer/CheckoutContainer';
 import CartContainer from '../CartContainer/CartContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
@@ -36,11 +36,7 @@ class Shop extends PureComponent {
 
       createCart(cartId);
     } else {
-      const items = JSON.parse(getCart(`'${cookieCartId}'`));
-
-      this.setState({
-        items,
-      });
+      // TODO: getCart
     }
   }
 

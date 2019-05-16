@@ -62,3 +62,19 @@ export const getCart = (cartId) => {
 
   return handleRequest(URL, params);
 }
+
+export const addReservation = ({
+  source, data, productId, bookingDate,
+}) => {
+  const URL = 'add-reservation';
+  const params = {
+    params: {
+      source,
+      data,
+      productId,
+      bookingDate,
+    },
+  };
+
+  return handleRequest(URL, params);
+}
