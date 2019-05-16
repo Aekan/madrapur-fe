@@ -7,7 +7,7 @@ import type { shopType } from '../../common/types/shop';
 
 export function* fetchShopData() {
   // const result = getProducts();
-  const result = yield fetch('http://api.modulus.hu/v1/rester/product').then((response) => response.json());
+  const result = yield fetch('https://api.budapestrivercruise.co.uk/v1/rester/product').then((response) => response.json());
 
   yield put(shopActions.updateShop(result));
 }

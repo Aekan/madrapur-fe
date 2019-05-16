@@ -266,19 +266,45 @@ class CheckoutContainer extends PureComponent {
     const coupon = document.getElementById('coupon').value;
 
     const billingData = {
-      firstname, lastname, companyname, phone, email, coupon,
+      bookingDetails: {
+        booking_cost: '',
+        booking_product_id: '',
+        booking_start: '',
+        booking_end: '',
+      },
+      orderDetails: {
+        allPersons: 3,
+        windowed: true,
+        customer_ip_adress: '',
+        paid_date: '',
+        billing_first_name: firstname,
+        billing_last_name: lastname,
+        billing_email: email,
+        billing_phone: phone,
+        billing_company_name: companyname,
+        order_currency: '',
+        order_total: '0',
+      },
+      personInfo: {
+        0: {
+          name: '',
+          personID: 1,
+          purchaseNumber: 1,
+          oneCost: '10',
+        },
+      },
     };
 
     const data = {
-      source: '',
-      data: billingData,
+      source: __CONFIG__.SOURCENAME,
+      data: JSON.stringify(billingData),
       productId: 1,
       bookingDate: '2019-06-28',
     };
 
-    addReservation(data);
+    addReservation(JSON.stringify(data));
 
-    console.log('proceed', this.state, billingData);
+    console.log('proceed', this.state, data);
   }
 
   render() {

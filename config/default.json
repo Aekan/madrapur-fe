@@ -25,10 +25,11 @@
   ],
   "app": {
     "description": "config inside 'app' will be injected to your frontend code automatically",
-    "API": "//api.budapestrivercruise.co.uk/v1/rester/",
+    "API": "https://api.budapestrivercruise.co.uk/v1/rester/",
     "METHODS": {
       "GET": "GET",
       "POST": "POST"
-    }
+    },
+    "SOURCENAME": "budapestrivercruise.co.uk"
   }
 }
