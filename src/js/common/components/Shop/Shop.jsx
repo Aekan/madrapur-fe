@@ -4,6 +4,7 @@ import { uuid, arrDiff } from '../Utilities/index';
 import CheckoutContainer from '../CheckoutContainer/CheckoutContainer';
 import CartContainer from '../CartContainer/CartContainer';
 import ProductContainer from '../ProductContainer/ProductContainer';
+import ThankYouContainer from '../ThankYouContainer/ThankYouContainer';
 import ProductList from '../ProductList/ProductList';
 import HomePage from '../HomePage/HomePage';
 import { createCart, addToCart, getCart } from '../../api/index';
@@ -86,7 +87,7 @@ class Shop extends PureComponent {
     }
 
     if (match && match.path && match.isExact && match.path === '/cart') {
-      console.log('cart', this.state.items);
+      console.log('cart');
 
       return (
         <div className="container cart-container">
@@ -99,8 +100,22 @@ class Shop extends PureComponent {
       );
     }
 
+    if (match && match.path && match.isExact && match.path === '/checkout/thankyou/:orderRef/:orderCurrency/:RC/:RT/:3dsecure/:date/:payrefno/:ctrl') {
+      console.log('checkout/thankyou');
+
+      return (
+        <div className="container checkout-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <ThankYouContainer {...this.props} {...this.state} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if (match && match.path && match.isExact && match.path === '/checkout') {
-      console.log('checkout', this.state.items);
+      console.log('checkout');
 
       return (
         <div className="container checkout-container">

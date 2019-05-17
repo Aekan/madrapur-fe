@@ -63,7 +63,7 @@ export const getCart = (cartId) => {
   return handleRequest(URL, params);
 }
 
-export const addReservation = (data) => {
+export const addReservation = (data, cb) => {
   const URL = 'add-reservation';
   const params = {
     params: {
@@ -71,7 +71,7 @@ export const addReservation = (data) => {
     },
   };
 
-  return handleRequest(URL, params);
+  return handleRequest(URL, params, cb);
 }
 
 export const actionPay = (id) => {

@@ -1,5 +1,7 @@
 /* eslint-disable react/no-danger */
 import React, { PureComponent } from 'react';
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
 import styles from './CheckoutContainer.css';
 import { addReservation } from '../../api/index';
 import { actionPay } from '../../api/module/rester/v1/product';
@@ -30,75 +32,17 @@ class CheckoutContainer extends PureComponent {
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
-    items = items.length ? items : [
-      {
-        selectedDay: '2019-05-09T10:00:00.000Z',
-        product: {
-          capacity: '100',
-          category: 'Sightseeing Tour Budapest',
-          currency: 'EUR',
-          description: '',
-          duration: '75',
-          end_date: '2019-12-31',
-          id: 4,
-          images: '',
-          prices: [
-            {
-              description: 'Include: 4 course dinner + 1 drink',
-              discount: '',
-              id: 6,
-              name: 'Child ticket 5-10 years old ( ',
-              price: 49,
-              product_id: '1',
-            },
-          ],
-          short_description: '',
-          slug: '/product/:id',
-          start_date: '2019-04-01',
-          status: 'active',
-          thumbnail: '',
-          times: [],
-          title: 'Budapest Booze & Pizza Cruise',
-        },
-        productsTotal: 0,
-        selectedPerson: [
-          {
-            price: {
-              id: 2,
-              product_id: '1',
-              description: '4-course meal + glass of drink',
-              discount: '0',
-              price: 63,
-              name: 'Dinner Ticket ( € 63 / person )',
-            },
-            count: 4,
-          },
-          {
-            price: {
-              id: 10,
-              product_id: '1',
-              description: '4-course meal + glass of drink ( under 10 years )',
-              discount: '0',
-              price: 57,
-              name: 'Child Dinner ( € 57 / person )',
-            },
-            count: 2,
-          },
-        ],
-        selectedTime: {
-          id: 1,
-          product_id: '1',
-          name: '19:00',
-          start_date: '2019-05-07',
-          end_date: '2019-05-17',
-        },
-      },
-    ];
+    items = items.length ? items : __CONFIG__.ITEMS;
+
+    this.options = countryList().getData();
 
     this.state = {
       items,
-      total: 0
-    }
+      total: 0,
+      options: this.options,
+      country: null,
+      hidden: '',
+    };
   }
 
   componentWillUpdate() {
@@ -132,8 +76,28 @@ class CheckoutContainer extends PureComponent {
           <input id="email" name="email" type="text" placeholder="email" className="form-control input-md" required />
         </div>
         <div className="form-group col-sm-6">
-          <label className="control-label" htmlFor="email">Coupon</label>
-          <input id="coupon" name="coupon" type="text" placeholder="coupon" className="form-control input-md" />
+          <Select
+            className="form-control input-md"
+            options={this.state.options}
+            value={this.state.value}
+            onChange={this.changeHandler}
+          />
+        </div>
+        <div className="form-group col-sm-6">
+          <label className="control-label" htmlFor="postcode">Postcode</label>
+          <input id="postcode" name="postcode" type="text" placeholder="postcode" className="form-control input-md" required />
+        </div>
+        <div className="form-group col-sm-6">
+          <label className="control-label" htmlFor="city">City</label>
+          <input id="city" name="city" type="text" placeholder="city" className="form-control input-md" required />
+        </div>
+        <div className="form-group col-sm-6">
+          <label className="control-label" htmlFor="address1">Address #1</label>
+          <input id="address1" name="address1" type="text" placeholder="address1" className="form-control input-md" required />
+        </div>
+        <div className="form-group col-sm-6">
+          <label className="control-label" htmlFor="address2">Address #2 (optional)</label>
+          <input id="address2" name="address2" type="text" placeholder="address2" className="form-control input-md" />
         </div>
       </div>
     );
@@ -256,45 +220,99 @@ class CheckoutContainer extends PureComponent {
     );
   }
 
+  changeHandler = (country) => {
+    this.setState({ country });
+  }
+
   handleFormSubmit(event) {
     event.preventDefault();
 
+    const {
+      country,
+      items,
+    } = this.state;
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('lastname').value;
     const companyname = document.getElementById('companyname').value;
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
-    const coupon = document.getElementById('coupon').value;
+    const postcode = document.getElementById('postcode').value;
+    const city = document.getElementById('city').value;
+    const address1 = document.getElementById('address1').value;
+    const address2 = document.getElementById('address2').value;
 
-    const billingData = {
-      bookingDetails: {
-        booking_cost: '',
-        booking_product_id: '',
-        booking_start: '',
-        booking_end: '',
-      },
-      orderDetails: {
-        allPersons: 3,
-        windowed: true,
-        customer_ip_adress: '',
-        paid_date: '',
-        billing_first_name: firstname,
-        billing_last_name: lastname,
-        billing_email: email,
-        billing_phone: phone,
-        billing_company_name: companyname,
-        order_currency: '',
-        order_total: '0',
-      },
-      personInfo: {
-        0: {
-          name: '',
-          personID: 1,
-          purchaseNumber: 1,
-          oneCost: '10',
-        },
-      },
-    };
+    const billingData = items.map(
+      (item) => {
+        console.warn('item', item);
+        const {
+          product,
+          selectedDay,
+          selectedPerson,
+          selectedTime,
+        } = item;
+
+        let currentTotal = 0;
+        let currentCount = 0;
+        const personInfo = {};
+
+        const totalPrice = selectedPerson.map(
+          (person, index) => {
+            const {
+              count,
+              price,
+            } = person;
+            console.log('person', person);
+
+            currentTotal += price.price * count;
+            currentCount += count;
+
+            personInfo[index] = {
+              name: price.name,
+              personID: price.id,
+              purchaseNumber: count,
+              oneCost: price.price.toString(),
+            };
+
+            console.log('currentTotal', currentTotal);
+
+            return price.price * count;
+          }
+        );
+
+        const selectedDayString = selectedDay.toLocaleDateString();
+        const selectedTimetring = selectedTime.name;
+        const bookingDate = new Date(`${selectedDayString} ${selectedTimetring}`).toLocaleString();
+
+        return {
+          bookingDetails: {
+            booking_name: product.title,
+            booking_cost: currentTotal,
+            booking_product_id: product.id,
+            booking_start: bookingDate,
+            booking_end: bookingDate,
+          },
+          orderDetails: {
+            allPersons: currentCount,
+            windowed: false,
+            customer_ip_adress: '',
+            paid_date: '',
+            billing_first_name: firstname,
+            billing_last_name: lastname,
+            billing_email: email,
+            billing_phone: phone,
+            billing_company_name: companyname,
+            billing_country: country,
+            billing_postcode: postcode,
+            billing_city: city,
+            billing_address1: address1,
+            billing_address2: address2,
+            order_currency: product.currency,
+            order_total: totalPrice,
+          },
+          personInfo,
+        };
+      }
+    );
 
     const data = {
       source: __CONFIG__.SOURCENAME,
@@ -303,13 +321,23 @@ class CheckoutContainer extends PureComponent {
       bookingDate: '2019-06-28',
     };
 
-    addReservation(JSON.stringify(data));
+    const cb = (responseData) => {
+      this.setState({ hidden: responseData });
+
+      console.log('hiddenResponseData', responseData);
+
+      document.getElementById('otpdiv').innerHTML = responseData;
+
+      document.getElementById('SimpleForm').submit();
+    };
+
+    const hidden = addReservation(JSON.stringify(data), cb);
 
     console.log('proceed', this.state, data);
   }
 
   render() {
-    const { items } = this.state;
+    const { items, hidden } = this.state;
 
     console.warn('checkout', items);
 
@@ -336,6 +364,10 @@ class CheckoutContainer extends PureComponent {
                 <pre>{JSON.stringify(items, null, 2) }</pre>
               </div>
             </form>
+
+            <div dangerouslySetInnerHTML={{ __html: hidden }} />
+
+            <div id="otpdiv"></div>
           </div>
         </div>
       </div>

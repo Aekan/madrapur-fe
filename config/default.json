@@ -30,6 +30,171 @@
       "GET": "GET",
       "POST": "POST"
     },
-    "SOURCENAME": "budapestrivercruise.co.uk"
+    "SOURCENAME": "budapestrivercruise.co.uk",
+    "ITEMS": [
+      {
+        "selectedDay": "2019-05-23T10:00:00.000Z",
+        "product": {
+          "id": 2,
+          "currency": "EUR",
+          "status": "active",
+          "title": "Budapest Danube Cruise - 75 minutes Sightseeing",
+          "description": "<section></section><section><h1>Book your ticket online and enjoy<strong> Budapest river cruise!</strong></h1><p>While sailing with us you will have the possibility to gaze at the panoramic view of Budapest, exploring UNESCO’ s World Heritage sites such as the <strong>Hungarian Parliament</strong>, <strong>Buda Castle</strong>, and <strong>Gellért Hill</strong>. Our main goal is to give a perfect picture from Budapest to you by a sightseeing cruise as keeping all the guests’ attention. Cruising along the Danube, you are able to get some knowledge about the two sides of the city called Pest and Buda, separated by the river and crossed by the well-known seven bridges namely <strong>Margaret Bridge</strong>, <strong>Széchenyi Chain Bridge</strong> – as the most significant and oldest one in the city -, Rákóczi Bridge, Elisabeth Bridge, Árpád Bridge, Liberty Bridge and Petőfi Bridge.</p><p>Explore all of them from a new perspective not only walking through them but also shipping under, spending a pleasant 75-minute on board. Each bridge has a completely different style as being both touristic and transport facilities. How all of them are so beautiful lit up in the evenings! During the <strong>Budapest river cruise,</strong> we are passing the main views and sights of the city, ensuring a memorable <strong>sightseeing cruise</strong>.</p><h3>TIME SCHEDULE</h3><table><tbody><tr><td colspan=\"10\">Meeting Point: Dock 11; Next to the Elizabeth Bridge</td></tr><tr><td>11:00</td><td>13:00</td></tr><tr><td>15:00</td><td>16:00</td></tr><tr><td>17:00</td><td>18:00</td></tr><tr><td>19:00</td><td>20:00</td></tr><tr><td>21:00</td><td>22:00</td></tr></tbody></table><p><strong>Boarding time: 30 minutes before departure time</strong></p><p>Therefore, if you have decided to purchase tickets in order to have a new adventure in Budapest, regarding prices you can find all information on our website. As you would expect, there are lower prices guaranteed for children between 5 and 10 years old. Tickets can be purchased at Dock 11 personally (near Elisabeth Bridge) or online where you can get extra discount.</p><p>Moreover, for each tour guide, bringing a small group of visitors, the 75-minute sightseeing cruise is free. Have you ever heard about Hop On Hop Off boat service? Stay on the boat to look at the monumental buildings or hop on and off at several stops to discover Budapest on foot. Then you will also have the chance to hop on again and stop at the next station. Your ticket is available in 48 hours. The tour ends at the boarding place, exactly the same one of Dock 11 next to Elisabeth Bridge.</p><p>Don’t be afraid of any occurring weather conditions. All boats are perfect for the hot summer or extremely cold winter conditions since heating and air-conditioning are also provided. So we are waiting for you all the year around with special meals, great atmosphere, polite and qualified staff.</p><p>Not to mention our special types of <strong>Danube river cruises</strong>. For example, during the so-called <a href=\"https://regi.budapestrivercruise.co.uk/product/budapest-booze-pizza/\" target=\"_self\"><strong>booze cruises</strong></a> you are allowed to drink unlimited cold drinks, so non-alcoholic soft drinks and unlimited beer. Furthermore, during snack cruise guests can try mouth-watering street foods such as panini (mortadella classic, parma grande, Greek chicken or pork), Belgian waffles, chocolate fondant or piadina (caprese, Quattro Formaggi, al’prosciutto).</p><p>Rather interested in evening river cruises? Choose our extraordinary and unique <a href=\"https://regi.budapestrivercruise.co.uk/budapest-dinner-cruise-live-piano-show/\" target=\"_self\"><strong>piano battle show</strong></a> or <strong><a href=\"https://regi.budapestrivercruise.co.uk/budapest-river-cruise-hungarian-folklore/\" target=\"_self\">folklore and operetta shows</a></strong>. Or you are looking for a special venue for your wedding ceremony or birthday party, even a romantic scene on Valentine’s Day, or just want to see the amazing view of the sunset on the River Danube, then think of us and ask for a tailor-made quotation from our helpful colleagues – <a href=\"https://regi.budapestrivercruise.co.uk/contact/\" target=\"_self\"><strong>contact</strong></a>.</p><h3><strong>So why is Budapest worth visiting at least once in your life?</strong></h3><p>Taking notice of the city as a cost-effective one, spend your free time and take observation carefully at the scenic postcard-perfect attractions. Furthermore, amaze how wonderful the river Danube and UNESCO World Heritage sites are. Having a<strong>Budapest river cruise</strong>, you will completely become rich by a special experience. Well, there is no better way to discover the whole town than spending 75 minutes with your loved ones in the monumental Budapest. Besides taking part in a <strong>sightseeing river cruise</strong>, on land taste many traditional Hungarian foods and check local farmers’ market of fruit and ve",
+          "short_description": "<p>Board your unique designed Budapest Sightseeing Cruise by Silverline Cruises. Our tour takes 75 minutes and tickets are valid for 48 hours.</p>",
+          "thumbnail": "",
+          "images": "",
+          "category": "Dinner cruise",
+          "start_date": "2019-01-01",
+          "end_date": "2020-05-31",
+          "capacity": "100",
+          "duration": "75",
+          "slug": "/product/budapest-danube-cruise-75-minutes-sightseeing",
+          "times": [
+            {
+              "id": 2,
+              "product_id": "2",
+              "name": "11:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 11,
+              "product_id": "2",
+              "name": "13:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 12,
+              "product_id": "2",
+              "name": "15:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 13,
+              "product_id": "2",
+              "name": "17:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 14,
+              "product_id": "2",
+              "name": "18:30",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 15,
+              "product_id": "2",
+              "name": "19:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 16,
+              "product_id": "2",
+              "name": "19:30",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 17,
+              "product_id": "2",
+              "name": "20:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 18,
+              "product_id": "2",
+              "name": "20:30",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 19,
+              "product_id": "2",
+              "name": "21:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 21,
+              "product_id": "2",
+              "name": "21:30",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            },
+            {
+              "id": 22,
+              "product_id": "2",
+              "name": "22:00",
+              "start_date": "2019-01-01",
+              "end_date": "2019-12-31"
+            }
+          ],
+          "prices": [
+            {
+              "id": 11,
+              "product_id": "2",
+              "description": "75 minutes Sightseeing",
+              "discount": "",
+              "price": 14,
+              "name": "Adult ticket ( € 14 / person )",
+              "start_date": null,
+              "end_date": null
+            },
+            {
+              "id": 12,
+              "product_id": "2",
+              "description": "75 minutes Sightseeing",
+              "discount": "",
+              "price": 12,
+              "name": "Child - age 5-15 ( € 12 / person )",
+              "start_date": null,
+              "end_date": null
+            }
+          ]
+        },
+        "productsTotal": 0,
+        "selectedPerson": [
+          {
+            "price": {
+              "id": 11,
+              "product_id": "2",
+              "description": "75 minutes Sightseeing",
+              "discount": "",
+              "price": 14,
+              "name": "Adult ticket ( € 14 / person )",
+              "start_date": null,
+              "end_date": null
+            },
+            "count": 2
+          },
+          {
+            "price": {
+              "id": 12,
+              "product_id": "2",
+              "description": "75 minutes Sightseeing",
+              "discount": "",
+              "price": 12,
+              "name": "Child - age 5-15 ( € 12 / person )",
+              "start_date": null,
+              "end_date": null
+            },
+            "count": 2
+          }
+        ],
+        "selectedTime": {
+          "id": 2,
+          "product_id": "2",
+          "name": "11:00",
+          "start_date": "2019-01-01",
+          "end_date": "2019-12-31"
+        }
+      }
+    ]
   }
 }
