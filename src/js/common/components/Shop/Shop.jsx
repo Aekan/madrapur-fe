@@ -100,7 +100,7 @@ class Shop extends PureComponent {
       );
     }
 
-    if (match && match.path && match.isExact && match.path === '/checkout/thankyou/:orderRef/:orderCurrency/:RC/:RT/:3dsecure/:date/:payrefno/:ctrl') {
+    if (match && match.path && match.isExact && match.path === '/checkout/thankyou/:orderRef/:status') {
       console.log('checkout/thankyou');
 
       return (

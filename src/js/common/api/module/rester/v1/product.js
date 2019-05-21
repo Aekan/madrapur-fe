@@ -84,3 +84,14 @@ export const actionPay = (id) => {
 
   return handleRequest(URL, params);
 }
+
+export const getOrder = (id, cb) => {
+  const URL = 'get-order';
+  const params = {
+    params: {
+      id,
+    },
+  };
+
+  return handleRequest(URL, params, cb);
+}

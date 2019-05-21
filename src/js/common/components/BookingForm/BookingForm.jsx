@@ -171,16 +171,25 @@ class BookingForm extends PureComponent {
     const { product } = this.props;
     const { times } = product;
 
+    const timeStyle = {
+      margin: '0px',
+    };
+
+    const timeInputStyle = {
+      width: '100%',
+    }
+
     const timesElements = times.map(
       (time) => {
         return (
-          <div key={`time-element_${time.id}`}>
+          <div key={`time-element_${time.id}`} style={timeStyle}>
             <input
               type="button"
               value={time.name}
               onClick={this.handleTimesClick}
               className={styles.timesButton}
               data-time-element={JSON.stringify(time)}
+              style={timeInputStyle}
             />
           </div>
         )

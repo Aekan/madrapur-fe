@@ -34,7 +34,7 @@ module.exports = (
         <Route exact path="/cruise-shop" component={shopRender} />
         <Route path="/product/:productId" component={shopRender} />
         <Route exact path="/cart" component={shopRender} />
-        <Route path="/checkout/thankyou/:orderRef/:orderCurrency/:RC/:RT/:3dsecure/:date/:payrefno/:ctrl" component={shopRender} />
+        <Route path="/checkout/thankyou/:orderRef/:status" component={shopRender} />
         <Route exact path="/checkout" component={shopRender} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="*" component={shopRender} />

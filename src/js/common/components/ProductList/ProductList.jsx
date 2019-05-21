@@ -16,6 +16,7 @@ const ProductList = (props) => {
             title,
             id,
             prices,
+            thumbnail,
           } = product;
 
           const price = prices && prices[0] ? prices[0].price : 0;
@@ -29,7 +30,7 @@ const ProductList = (props) => {
               key={slug}
               productPrice={price}
               productName={title}
-              imgSrc="https://regi.budapestrivercruise.co.uk/wp-content/uploads/2017/10/hungarianfolklore-300x300.jpg"
+              imgSrc={thumbnail}
               onClick={productCardOnClickCb}
             />
           );
