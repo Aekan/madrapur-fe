@@ -4,6 +4,7 @@ export const uuid = (prefix) => {
   const S4 = () => {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   };
+
   return (`${uuidPrefix}_${S4() + S4()}-${S4()}-${S4()}-${S4()}-${S4()}${S4()}${S4()}`);
 }
 
@@ -23,9 +24,7 @@ export const arrDiff = (a1, a2) => {
     }
   }
 
-  for (const k in a) {
-    diff.push(k);
-  }
+  Object.keys(a).forEach((k) => diff.push(k));
 
   return diff;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavItem = (props) => {
   const { itemLink } = props;
@@ -8,11 +8,11 @@ const NavItem = (props) => {
 
   return (
     <li className="nav-item">
-      <Link className="nav-link" to={itemLink}>
+      <NavLink activeStyle={{ color: 'red' }} className="nav-link" to={itemLink}>
         {itemName}
-      </Link>
+      </NavLink>
     </li>
-  )
+  );
 }
 
 export default NavItem;

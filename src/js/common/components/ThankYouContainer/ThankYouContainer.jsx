@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prefer-stateless-function */
@@ -66,7 +67,7 @@ class ThankYouContainer extends PureComponent {
 
   renderCardSuccess(transactionId, reservationIds, transactionDate) {
     return (
-      <div className={styles.paymentSuccess}s>
+      <div className={styles.paymentSuccess}>
         <h1>{OTPConst.SUCCESSFUL_CARD_AUTHORIZATION}</h1>
         <div>{OTPConst.PAYREFNO}: {transactionId}</div>
         <div>{OTPConst.ORDER_ID}: {reservationIds.map((id) => id)}</div>
@@ -87,7 +88,6 @@ class ThankYouContainer extends PureComponent {
   }
 
   render() {
-    console.warn('tyRender', this.state);
     const { renderElement } = this.state;
 
     return (

@@ -1,3 +1,8 @@
 {
-    "javascript.implicitProjectConfig.experimentalDecorators": true
+    "files.associations": {
+        "*.css": "postcss"
+    },
+    "files.eol": "\n",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "search.showLineNumbers": true,
 }

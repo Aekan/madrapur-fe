@@ -10,7 +10,6 @@ export const handleRequest = (URL, params = {}, cb = null) => {
     .get(resourceURL, params)
     .then((response) => {
       responseData.push(response.data);
-      console.warn('ajaxsuccess', response.data);
 
       if (cb) cb(response.data);
     })
