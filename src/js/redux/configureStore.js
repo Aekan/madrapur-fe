@@ -6,7 +6,7 @@ import {
 } from 'redux';
 
 import sagas from './sagas';
-import rootReducer from './rootReducers';
+import rootReducer from './reducers';
 
 // Redux DevTools Extension for Chrome and Firefox
 const reduxDevTool = () => {
@@ -26,8 +26,8 @@ export default function configureStore(initialState, history) {
   sagaMiddleware.run(sagas);
 
   if (module.hot) {
-    module.hot.accept('./rootReducers', () => {
-      store.replaceReducer(require('./rootReducers'));
+    module.hot.accept('./reducers', () => {
+      store.replaceReducer(require('./reducers'));
     });
   }
 
