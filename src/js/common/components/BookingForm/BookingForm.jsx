@@ -47,6 +47,10 @@ class BookingForm extends PureComponent {
     };
   }
 
+  componentWillReceiveProps() {
+    
+  }
+
   componentDidMount() {
     this.setState(...this.props);
   }
@@ -130,7 +134,7 @@ class BookingForm extends PureComponent {
   }
 
   getPrices() {
-    const { product } = this.props;
+    const { product } = this.description;
     const { prices } = product;
 
     console.log(prices[0]);

@@ -128,12 +128,12 @@ class Shop extends PureComponent {
       );
     }
 
-    if (match && match.params && match.params.productId && result) {
+    if (match && match.params && match.params.productId && result && result.result) {
       return (
         <div className="container product-container">
           <div className="row">
             <div className="col-lg-12">
-              <ProductContainer {...this.props} onBookNow={this.onBookNow} />
+              <ProductContainer {...this.props} {...this.state} onBookNow={this.onBookNow} />
             </div>
           </div>
         </div>

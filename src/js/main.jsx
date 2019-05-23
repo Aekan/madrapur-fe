@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM, { hydrate, render } from 'react-dom'
 import { fromJS } from 'immutable'
 
 import routes from './routes'

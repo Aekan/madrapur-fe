@@ -88,8 +88,10 @@ class ProductContainer extends PureComponent {
   render() {
     const { result, items } = this.props;
     const product = this.getCurrentProduct(result);
+    const title = product && product.title ? product.title : '';
+    const description = product && product.description ? product.description : '';
 
-    console.warn('prodcontrender', items)
+    console.warn('prodcontrender', items, result, 'asd')
 
     return (
       <div className="container">
@@ -99,9 +101,9 @@ class ProductContainer extends PureComponent {
           </div>
           <div className="col-lg-9">
             <h1>
-              {product.title}
+              {title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: product.description }} />
+            <div dangerouslySetInnerHTML={{ __html: description }} />
           </div>
         </div>
       </div>
