@@ -47,11 +47,11 @@ class CheckoutContainer extends PureComponent {
 
   componentWillUpdate() {
     const { items } = this.props;
-    console.log('checkout_willupdate', this.props);
+    // console.log('checkout_willupdate', this.props);
   }
 
   getBillingForm() {
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       <div className="row">
@@ -76,11 +76,14 @@ class CheckoutContainer extends PureComponent {
           <input id="email" name="email" type="text" placeholder="email" className="form-control input-md" required />
         </div>
         <div className="form-group col-sm-6">
+          <label className="control-label" htmlFor="country">Country</label>
           <Select
-            className="form-control input-md"
+            className="input-md"
             options={this.state.options}
             value={this.state.value}
             onChange={this.changeHandler}
+            id="country"
+            name="country"
           />
         </div>
         <div className="form-group col-sm-6">
@@ -104,7 +107,7 @@ class CheckoutContainer extends PureComponent {
   }
 
   getAddedProducts() {
-    console.log('getAdded', this.state);
+    // console.log('getAdded', this.state);
     const { items } = this.state;
     let total = 0;
 
@@ -128,11 +131,11 @@ class CheckoutContainer extends PureComponent {
               count,
               price,
             } = person;
-            console.log('person', person);
+            // console.log('person', person);
 
             currentTotal += price.price * count;
 
-            console.log('currentTotal', currentTotal);
+            // console.log('currentTotal', currentTotal);
 
             return (
               <div className="product-person-name" key={price.name}>
@@ -172,7 +175,7 @@ class CheckoutContainer extends PureComponent {
       }
     );
 
-    console.log('total', total);
+    // console.log('total', total);
 
     return (
       <div className="">
@@ -197,7 +200,7 @@ class CheckoutContainer extends PureComponent {
   }
 
   getPaymentMethod() {
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       <div className="row">
@@ -243,7 +246,7 @@ class CheckoutContainer extends PureComponent {
 
     const billingData = items.map(
       (item) => {
-        console.warn('item', item);
+        // console.warn('item', item);
         const {
           product,
           selectedDay,
@@ -261,7 +264,7 @@ class CheckoutContainer extends PureComponent {
               count,
               price,
             } = person;
-            console.log('person', person);
+            // console.log('person', person);
 
             currentTotal += price.price * count;
             currentCount += count;
@@ -273,7 +276,7 @@ class CheckoutContainer extends PureComponent {
               oneCost: price.price.toString(),
             };
 
-            console.log('currentTotal', currentTotal);
+            // console.log('currentTotal', currentTotal);
 
             return price.price * count;
           }
@@ -324,7 +327,7 @@ class CheckoutContainer extends PureComponent {
     const cb = (responseData) => {
       this.setState({ hidden: responseData });
 
-      console.log('hiddenResponseData', responseData);
+      // console.log('hiddenResponseData', responseData);
 
       document.getElementById('otpdiv').innerHTML = responseData;
 
@@ -333,13 +336,13 @@ class CheckoutContainer extends PureComponent {
 
     const hidden = addReservation(JSON.stringify(data), cb);
 
-    console.log('proceed', this.state, data);
+    // console.log('proceed', this.state, data);
   }
 
   render() {
     const { items, hidden } = this.state;
 
-    console.warn('checkout', items);
+    // console.warn('checkout', items);
 
     return (
       <div className="container">
@@ -358,10 +361,6 @@ class CheckoutContainer extends PureComponent {
 
               <div className={styles.section}>
                 {this.getPaymentMethod()}
-              </div>
-
-              <div className={styles.section}>
-                <pre>{JSON.stringify(items, null, 2) }</pre>
               </div>
             </form>
 

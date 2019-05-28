@@ -10,7 +10,7 @@ const ProductCard = (props) => {
   const { productPrice } = props;
   const { productCardOnClickCb } = props;
 
-  console.log(props);
+  // console.log(props);
 
   return (
     <div

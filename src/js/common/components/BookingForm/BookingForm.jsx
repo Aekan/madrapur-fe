@@ -47,12 +47,8 @@ class BookingForm extends PureComponent {
     };
   }
 
-  componentWillReceiveProps() {
-    
-  }
-
   componentDidMount() {
-    this.setState(...this.props);
+    this.setState({ ...this.props });
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -92,17 +88,21 @@ class BookingForm extends PureComponent {
     const localeDate = day.toLocaleDateString();
     const localeToday = (new Date()).toLocaleDateString();
 
-    const isDisabled = product.times.some((time) => {
-      const localeStartDate = (new Date(time.start_date)).toLocaleDateString();
-      const localeEndDate = (new Date(time.end_date)).toLocaleDateString();
+    let isDisabled = true;
 
-      return (
-        localeDate < localeStartDate
-        || localeDate > localeEndDate
-        || localeDate < localeToday
-        || localeDate > localeEndDate
-      );
-    });
+    if (product && product.times) {
+      isDisabled = product.times.some((time) => {
+        const localeStartDate = (new Date(time.start_date)).toLocaleDateString();
+        const localeEndDate = (new Date(time.end_date)).toLocaleDateString();
+
+        return (
+          localeDate < localeStartDate
+          || localeDate > localeEndDate
+          || localeDate < localeToday
+          || localeDate > localeEndDate
+        );
+      });
+    }
 
     return isDisabled;
   }
@@ -134,35 +134,38 @@ class BookingForm extends PureComponent {
   }
 
   getPrices() {
-    const { product } = this.description;
-    const { prices } = product;
+    const { product } = this.props;
+    let priceElements = '';
 
-    console.log(prices[0]);
+    if (product && product.prices) {
+      const { prices } = product;
+      // console.log(prices[0]);
 
-    const priceElements = prices.map(
-      (price) => {
-        return (
-          <div key={`price-element_${price.id}`}>
-            <label htmlFor={`price_${price.id}`}>
-              {price.name}
-            </label>
+      priceElements = prices.map(
+        (price) => {
+          return (
+            <div key={`price-element_${price.id}`}>
+              <label htmlFor={`price_${price.id}`}>
+                {price.name}
+              </label>
 
-            <NumericInput
-              className="form-control"
-              data-price-element={JSON.stringify(price)}
-              min={0}
-              mobile
-              name={`price_${price.id}`}
-              max={100}
-              onChange={this.handlePersonChange}
-              value={0}
-            />
+              <NumericInput
+                className="form-control"
+                data-price-element={JSON.stringify(price)}
+                min={0}
+                mobile
+                name={`price_${price.id}`}
+                max={100}
+                onChange={this.handlePersonChange}
+                value={0}
+              />
 
-            {price.description}
-          </div>
-        )
-      }
-    );
+              {price.description}
+            </div>
+          )
+        }
+      );
+    }
 
     return (
       <div className="price-picker-div">
@@ -173,7 +176,7 @@ class BookingForm extends PureComponent {
 
   getTimesPicker() {
     const { product } = this.props;
-    const { times } = product;
+    let timesElements = '';
 
     const timeStyle = {
       margin: '0px',
@@ -183,24 +186,26 @@ class BookingForm extends PureComponent {
       width: '100%',
     }
 
-    const timesElements = times.map(
-      (time) => {
-        return (
-          <div key={`time-element_${time.id}`} style={timeStyle}>
-            <input
-              type="button"
-              value={time.name}
-              onClick={this.handleTimesClick}
-              className={styles.timesButton}
-              data-time-element={JSON.stringify(time)}
-              style={timeInputStyle}
-            />
-          </div>
-        )
-      }
-    );
+    if (product && product.times) {
+      const { times } = product;
 
-    console.log(product.times, 'times');
+      timesElements = times.map(
+        (time) => {
+          return (
+            <div key={`time-element_${time.id}`} style={timeStyle}>
+              <input
+                type="button"
+                value={time.name}
+                onClick={this.handleTimesClick}
+                className={styles.timesButton}
+                data-time-element={JSON.stringify(time)}
+                style={timeInputStyle}
+              />
+            </div>
+          )
+        }
+      );
+    }
 
     return (
       <div className="time-picker-div">
@@ -219,7 +224,7 @@ class BookingForm extends PureComponent {
 
     const { product } = this.props;
 
-    console.warn('space', getSpaces(day.toLocaleDateString(), product.id));
+    // console.warn('space', getSpaces(day.toLocaleDateString(), product.id));
 
     this.setState({ selectedDay: day });
   }
@@ -236,12 +241,12 @@ class BookingForm extends PureComponent {
       productsTotal,
     } = this.state;
 
-    console.log('submit', history);
+    // console.log('submit', history);
 
     let newProductsTotal = productsTotal;
     selectedPerson.forEach(
       (person, id) => {
-        console.log(product.prices)
+        // console.log(product.prices)
       }
     );
 
@@ -259,14 +264,14 @@ class BookingForm extends PureComponent {
     let currIndex = 0;
     const currentPrice = selectedPerson.find(
       (price, index) => {
-        console.log('curpfe', priceObject.id, price)
+        // console.log('curpfe', priceObject.id, price)
         if (priceObject.id === price.price.id) currIndex = index;
 
         return priceObject.id === price.price.id;
       }
     );
 
-    console.log('currp', currentPrice);
+    // console.log('currp', currentPrice);
 
     if (!currentPrice) {
       selectedPerson.push({
@@ -279,10 +284,10 @@ class BookingForm extends PureComponent {
         count: valueAsNumber,
       };
 
-      console.log('exists', selectedPerson);
+      // console.log('exists', selectedPerson);
     }
 
-    console.log(currentPrice);
+    // console.log(currentPrice);
 
     this.setState({
       selectedPerson,
@@ -293,7 +298,7 @@ class BookingForm extends PureComponent {
     event.preventDefault();
     const timeElement = JSON.parse(event.target.dataset.timeElement);
 
-    console.log(timeElement);
+    // console.log(timeElement);
 
     this.setState({
       selectedTime: timeElement,
@@ -301,7 +306,7 @@ class BookingForm extends PureComponent {
   }
 
   render() {
-    console.log('formrender', this.props);
+    // console.log('formrender', this.props);
 
     return (
       <div className="booking-form">

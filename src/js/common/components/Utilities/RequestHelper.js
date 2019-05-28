@@ -15,7 +15,7 @@ export const handleRequest = (URL, params = {}, cb = null) => {
     })
     .catch((error) => {
       responseData = error;
-      console.error('ajaxerror', error);
+      // console.error('ajaxerror', error);
     })
     .then(() => {
       // always executed

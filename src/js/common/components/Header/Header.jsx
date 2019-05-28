@@ -28,13 +28,12 @@ const Header = () => {
             </DropDownItem>
             <DropDownItem dropDownName="DINNER CRUISES">
               <NavItem itemLink="/product/budapest-river-cruise-piano-battle-show" itemName="DINNER CRUISE & PIANO SHOW" />
-              <NavItem itemLink="/hungarian-folklore-and-dinner-cruise" itemName="DINNER CRUISE & HUNGARIAN FOLKLORE" />
+              <NavItem itemLink="/product/hungarian-folklore-and-dinner-cruise" itemName="DINNER CRUISE & HUNGARIAN FOLKLORE" />
               <NavItem itemLink="/product/wine-tasting-budapest-with-taste-and-play" itemName="BUDAPEST WINE TASTING" />
               <NavItem itemLink="/product/budapest-valentine-s-day-dinner-with-cruise" itemName="BUDAPEST VALENTINE'S DAY CRUISE" />
               <NavItem itemLink="/product/budapest-christmas-eve-cruise-dinner" itemName="BUDAPEST CHRISTMAS CRUISE" />
               <NavItem itemLink="/product/new-years-eve-budapest-dinner-cruise" itemName="BUDAPEST NEW YEAR'S CRUISE" />
             </DropDownItem>
-            <NavItem itemLink="/product/budapest-to-szentendre-river-cruise" itemName="HISTORICAL TOUR" />
             <NavItem itemLink="/event-venues-in-budapest" itemName="EVENT VENUES IN BUDAPEST" />
             <NavItem itemLink="/cruise-shop" itemName="SHOP" />
             <DropDownItem dropDownName="CONTACT">

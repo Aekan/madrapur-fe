@@ -30,14 +30,14 @@ class ProductContainer extends PureComponent {
 
   componentWillUpdate() {
     const { result } = this.props;
-    console.log('willupdate', result);
+    // console.log('willupdate', result);
   }
 
   onSubmit(bookedProduct) {
     const { onBookNow } = this.props;
 
-    console.log(this.props);
-    console.log('bookedproduct', bookedProduct);
+    // console.log(this.props);
+    // console.log('bookedproduct', bookedProduct);
 
     onBookNow(bookedProduct);
   }
@@ -86,12 +86,12 @@ class ProductContainer extends PureComponent {
   }
 
   render() {
-    const { result, items } = this.props;
+    const { result } = this.props;
     const product = this.getCurrentProduct(result);
     const title = product && product.title ? product.title : '';
     const description = product && product.description ? product.description : '';
 
-    console.warn('prodcontrender', items, result, 'asd')
+    // console.warn('prodcontrender', result, 'asd')
 
     return (
       <div className="container">

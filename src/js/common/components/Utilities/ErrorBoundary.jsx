@@ -20,7 +20,7 @@ class ErrorBoundary extends PureComponent {
 
   componentDidCatch(error, info) {
     // you probably want to log it somewhere
-    console.log(error, info)
+    // console.log(error, info)
     this.setState({
       hasError: true,
     });

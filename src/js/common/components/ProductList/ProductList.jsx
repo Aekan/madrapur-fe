@@ -4,7 +4,7 @@ import ProductCard from '../Card/ProductCard';
 const ProductList = (props) => {
   const { result, productCardOnClickCb } = props;
 
-  console.log(props, 'prodlist');
+  // console.log(props, 'prodlist');
 
   return (
     <div className="container">

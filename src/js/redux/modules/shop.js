@@ -25,20 +25,20 @@ export const actions = {
 
 export const reducers = {
   [GET_SHOP]: (state, { payload }) => {
-    console.warn("GETSOP", state, payload);
+    // console.warn("GETSOP", state, payload);
     const newState = state.merge({
       result: payload.result,
     });
-    console.warn(newState);
+    // console.warn(newState);
 
     return newState;
   },
   [UPDATE_SHOP]: (state, { payload }) => {
-    console.warn("UPSOP", state, payload);
+    // console.warn("UPSOP", state, payload);
     const newState = state.merge({
       result: payload.result,
     });
-    console.warn(newState);
+    // console.warn(newState);
 
     return newState;
   },

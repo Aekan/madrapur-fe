@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "*.css": "postcss"
+        "*.css": "postcss",
+        "*.js": "javascriptreact",
+        "*.jsx": "javascriptreact",
     },
     "files.eol": "\n",
     "javascript.implicitProjectConfig.experimentalDecorators": true,

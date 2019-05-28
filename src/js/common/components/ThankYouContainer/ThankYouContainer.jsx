@@ -33,7 +33,7 @@ class ThankYouContainer extends PureComponent {
   }
 
   getOrderCb(data) {
-    console.warn('getOrder', data);
+    // console.warn('getOrder', data);
 
     const stateData = data;
     stateData.reservationIds = JSON.parse(stateData.reservationIds);
@@ -49,8 +49,8 @@ class ThankYouContainer extends PureComponent {
 
     this.setState({ ...stateData });
 
-    console.log('rend', stateData.status === OTPConst.WAITING_FOR_IPN);
-    console.log('stét', this.state);
+    // console.log('rend', stateData.status === OTPConst.WAITING_FOR_IPN);
+    // console.log('stét', this.state);
   }
 
   renderFailure(transactionId, reservationIds, transactionDate) {

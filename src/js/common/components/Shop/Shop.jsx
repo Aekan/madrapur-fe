@@ -45,8 +45,8 @@ class Shop extends PureComponent {
     const { items } = this.state;
     const { history } = this.props;
 
-    console.log(this.state);
-    console.log('onBookNow', bookedProduct);
+    // console.log(this.state);
+    // console.log('onBookNow', bookedProduct);
 
     items.push(bookedProduct);
 
@@ -63,7 +63,7 @@ class Shop extends PureComponent {
 
   // eslint-disable-next-line class-methods-use-this
   productCardOnClickCb(event) {
-    console.log('cb', event);
+    // console.log('cb', event);
   }
 
   render() {
@@ -71,9 +71,9 @@ class Shop extends PureComponent {
     const result = (CartRequestResponse && CartRequestResponse.result) || null;
     const { match } = this.props;
 
-    console.warn(match, 'alius');
+    // console.warn(match, 'alius');
     if (match && match.path && match.isExact && match.path === '/') {
-      console.log('homepage', this.state);
+      // console.log('homepage', this.state);
 
       return (
         <div className="container-fluid home-container">
@@ -87,7 +87,7 @@ class Shop extends PureComponent {
     }
 
     if (match && match.path && match.isExact && match.path === '/cart') {
-      console.log('cart');
+      // console.log('cart');
 
       return (
         <div className="container cart-container">
@@ -101,7 +101,7 @@ class Shop extends PureComponent {
     }
 
     if (match && match.path && match.isExact && match.path === '/checkout/thankyou/:orderRef/:status') {
-      console.log('checkout/thankyou');
+      // console.log('checkout/thankyou');
 
       return (
         <div className="container checkout-container">
@@ -115,7 +115,7 @@ class Shop extends PureComponent {
     }
 
     if (match && match.path && match.isExact && match.path === '/checkout') {
-      console.log('checkout');
+      // console.log('checkout');
 
       return (
         <div className="container checkout-container">
@@ -140,12 +140,26 @@ class Shop extends PureComponent {
       );
     }
 
-    if (result && result.result) {
+    if (result && result.result && match && match.path && match.isExact && match.path === '/cruise-shop') {
       return (
         <div className="container shop-container">
           <div className="row">
             <div className="col-lg-12">
               <ProductList key="productList" content={result.result} productCardOnClickCb={this.productCardOnClickCb} {...this.props} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+    // console.warn(match, 'alius');
+    if (true) {
+      // console.log('homepage', this.state);
+
+      return (
+        <div className="container-fluid home-container">
+          <div className="row">
+            <div className="col-lg-12">
+              <HomePage {...this.props} />
             </div>
           </div>
         </div>

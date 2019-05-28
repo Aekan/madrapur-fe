@@ -8,7 +8,7 @@ export default class DayTimePicker extends PureComponent {
     super(props);
     const { times } = this.props;
 
-    console.log(times, 'daytime')
+    // console.log(times, 'daytime')
 
     this.handleDayClick = this.handleDayClick.bind(this);
     this.getDisabledDays = this.getDisabledDays.bind(this);
@@ -46,7 +46,7 @@ export default class DayTimePicker extends PureComponent {
       selectedDay,
     } = this.state;
 
-    console.log('daypickerrender', this.props)
+    // console.log('daypickerrender', this.props)
 
     return (
       <div className="day-picker-div">

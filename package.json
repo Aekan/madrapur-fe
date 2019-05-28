@@ -1,29 +1,29 @@
 {
-  "name": "react-redux-boilerplate",
-  "version": "1.2.4",
-  "description": "React Redux Boilerplate is a workflow boilerplate that make life easier for developers by providing a virtual development environment and production ready build process framework out of the box.",
+  "name": "budapest-river-cruise-uk",
+  "version": "1.0.0",
+  "description": "budapestrivercruise.co.uk application",
   "scripts": {
     "dev": "cross-env NODE_ENV=development DASHBOARD_PORT=9901 webpack-dashboard -p 9901 -c red -t dashboard -- node bin/commands.js dev",
     "build": "cross-env NODE_ENV=production node bin/commands.js build",
     "build:s3": "cross-env S3_DEPLOY=true NODE_ENV=production node bin/commands.js build",
     "build:stage": "cross-env NODE_ENV=stage node bin/commands.js build",
     "build:stage:s3": "cross-env S3_DEPLOY=true NODE_ENV=stage node bin/commands.js build",
-    "postbuild": "react-snap ",
     "clean": "rimraf docroot",
     "test": "jest --no-cache",
     "lint": "node bin/commands.js lint"
   },
+  "homepage": "https://budapestrivercruise.co.uk/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iroy2000/react-redux-boilerplate.git"
+    "url": "https://github.com/Aekan/madrapur-fe.git"
   },
-  "author": "Roy Yu <iroy2000@gmail.com>",
+  "author": "Peter Alius <peter.alius92@gmail.com>",
   "license": "MIT",
   "engines": {
     "npm": ">=3.10.7",
     "node": ">=6.9.0"
   },
-  "proxy": "https://api.budapestrivercruise.eu",
+  "proxy": "https://api.budapestrivercruise.co.uk",
   "devDependencies": {
     "assets-webpack-plugin": "^3.9.7",
     "babel-cli": "^6.26.0",
@@ -75,7 +75,6 @@
     "precss": "^4.0.0",
     "raf": "^3.4.1",
     "react-hot-loader": "^4.7.1",
-    "react-snap": "^1.23.0",
     "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",
@@ -149,21 +148,5 @@
       "pre-push": "npm test"
     }
   },
-  "reactSnap": {
-    "source": "docroot",
-    "minifyHtml": {
-      "collapseWhitespace": false,
-      "removeComments": false
-    }
-  },
-  "keywords": [
-    "react",
-    "redux",
-    "webpack",
-    "webpack-dev-server",
-    "postcss",
-    "jest",
-    "boilerplate",
-    "hmr"
-  ]
+  "keywords": []
 }

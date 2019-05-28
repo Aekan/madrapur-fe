@@ -8,7 +8,7 @@ const NavItem = (props) => {
 
   return (
     <li className="nav-item">
-      <NavLink activeStyle={{ color: 'red' }} className="nav-link" to={itemLink}>
+      <NavLink className="nav-link" to={itemLink}>
         {itemName}
       </NavLink>
     </li>

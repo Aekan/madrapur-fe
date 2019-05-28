@@ -1,16 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LazyLoading from '../../common/components/LazyLoading';
 import { actions as shopActions } from '../../redux/modules/shop';
 import { shopSelector } from '../../redux/selectors/shopSelector';
-import { ErrorBoundary } from '../../common/components/Utilities';
-import ProductContainer from '../../common/components/ProductContainer/ProductContainer';
 
-import type { shopType } from '../../common/types/shop';
+import { shopType } from '../../common/types/shop';
 
 const LazyShop = LazyLoading(() => import('../../common/components/Shop/Shop'));
-const LazyContainer = LazyLoading(() => import('../../common/components/ProductContainer/ProductContainer'));
 
 const mapStateToProps = (state) => ({
   result: shopSelector(state),
@@ -48,11 +45,7 @@ class ShopView extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <Fragment>
-            <ErrorBoundary>
-              <LazyShop {...this.props} />
-            </ErrorBoundary>
-          </Fragment>
+          <LazyShop {...this.props} />
         </div>
       </div>
     );

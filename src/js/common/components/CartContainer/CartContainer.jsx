@@ -79,7 +79,7 @@ class CartContainer extends PureComponent {
   }
 
   getAddedProducts() {
-    console.log('getAdded', this.state);
+    // console.log('getAdded', this.state);
     const { items } = this.state;
     let total = 0;
 
@@ -101,11 +101,11 @@ class CartContainer extends PureComponent {
               count,
               price,
             } = person;
-            console.log('person', person);
+            // console.log('person', person);
 
             currentTotal += price.price * count;
 
-            console.log('currentTotal', currentTotal);
+            // console.log('currentTotal', currentTotal);
 
             return (
               <div className="product-person-name" key={price.name}>
@@ -144,7 +144,7 @@ class CartContainer extends PureComponent {
       }
     );
 
-    console.log('total', total);
+    // console.log('total', total);
 
     return (
       <div className="">
@@ -171,7 +171,7 @@ class CartContainer extends PureComponent {
   render() {
     const { items } = this.state;
 
-    console.warn('cart', items);
+    // console.warn('cart', items);
 
     return (
       <div className="container">

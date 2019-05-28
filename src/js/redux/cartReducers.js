@@ -31,7 +31,7 @@ const cartReducer = (state = initState, action) => {
   const setState = state;
   const currAction = action;
 
-  console.log(setState, currAction);
+  // console.log(setState, currAction);
 }
 
 export default cartReducer;
