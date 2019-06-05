@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-danger */
 import React, { PureComponent } from 'react';
 import Select from 'react-select'

@@ -29,15 +29,14 @@ class ProductContainer extends PureComponent {
   }
 
   componentWillUpdate() {
-    const { result } = this.props;
+    // const { result } = this.props;
     // console.log('willupdate', result);
   }
 
   onSubmit(bookedProduct) {
     const { onBookNow } = this.props;
 
-    // console.log(this.props);
-    // console.log('bookedproduct', bookedProduct);
+    console.log('bookedproduct', bookedProduct);
 
     onBookNow(bookedProduct);
   }

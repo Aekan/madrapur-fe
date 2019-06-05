@@ -10,7 +10,7 @@ class HomePage extends PureComponent {
     return (
       <div>
         <div className={styles.seoBlock}>
-          <div className="container-fluid">
+          <div className="">
             <div className="row">
               <div className="col-lg-12">
                 <h1 style={{ margin: '30px 0px' }}>Budapest River Cruise</h1>

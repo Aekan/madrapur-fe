@@ -43,7 +43,7 @@ class ShopView extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <LazyShop {...this.props} />
         </div>

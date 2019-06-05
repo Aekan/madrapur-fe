@@ -7,6 +7,7 @@ import ProductContainer from '../ProductContainer/ProductContainer';
 import ThankYouContainer from '../ThankYouContainer/ThankYouContainer';
 import ProductList from '../ProductList/ProductList';
 import HomePage from '../HomePage/HomePage';
+import Page from '../Page/Page';
 import { createCart, addToCart, getCart } from '../../api/index';
 
 /**
@@ -76,7 +77,7 @@ class Shop extends PureComponent {
       // console.log('homepage', this.state);
 
       return (
-        <div className="container-fluid home-container">
+        <div className="home-container">
           <div className="row">
             <div className="col-lg-12">
               <HomePage {...this.props} />
@@ -156,10 +157,10 @@ class Shop extends PureComponent {
       // console.log('homepage', this.state);
 
       return (
-        <div className="container-fluid home-container">
+        <div className="home-container">
           <div className="row">
             <div className="col-lg-12">
-              <HomePage {...this.props} />
+              <Page {...this.props} />
             </div>
           </div>
         </div>
