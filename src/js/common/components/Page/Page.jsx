@@ -31,9 +31,41 @@ class HomePage extends PureComponent {
   }
 
   getPageContentCb = (responseData) => {
-    this.setState({ pageContent: responseData });
+    const pageContent = responseData;
 
-    console.log(responseData);
+    document.querySelectorAll('meta').forEach(
+      (element, i) => {
+        if (i < 3) {
+          return;
+        }
+
+
+        element.remove();
+      }
+    );
+
+    Object.entries(pageContent).forEach(
+      (metaEntry) => {
+        const name = metaEntry[0];
+
+        if (name.indexOf('meta') === 0) {
+          const content = metaEntry[1];
+
+          const details = name.substring(5).split(/:(.+)/);
+          const type = details[0];
+          const typeValue = details[1];
+
+          const element = document.createElement('meta', [type]);
+          element.setAttribute(type, typeValue);
+          element.setAttribute('content', content);
+          document.head.appendChild(element);
+
+          console.log(element);
+        }
+      }
+    );
+
+    this.setState({ pageContent });
   }
 
   render() {

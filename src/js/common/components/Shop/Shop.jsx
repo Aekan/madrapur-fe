@@ -77,7 +77,7 @@ class Shop extends PureComponent {
       // console.log('homepage', this.state);
 
       return (
-        <div className="home-container">
+        <div className="container home-container">
           <div className="row">
             <div className="col-lg-12">
               <HomePage {...this.props} />
